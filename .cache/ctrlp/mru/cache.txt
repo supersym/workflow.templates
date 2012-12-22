@@ -1,3 +1,4 @@
+/data/solo/ops/workflow/templates/Sublime.FileTemplates/CoffeeBasic.coffee
 /data/solo/ace/users/s/supersym/.zshrc
 /data/solo/ace/users/s/supersym/.xdefaults
 /data/solo/ace/users/s/supersym/.bash_login
