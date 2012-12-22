@@ -1,0 +1,1 @@
+/data/solo/ace/users/s/supersym/.xsession

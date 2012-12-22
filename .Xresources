@@ -1,0 +1,151 @@
+!vim: ft=xdefaults:foldmethod=marker:foldlevel=0:indent
+! urxvt ! URxvt
+! .
+! *
+!
+! Xft (X FreeType) with Bitstream, DejaVu, Liberation, or Terminus fonts:
+!  An anti-aliased font setup with Xft looks fantastic; it can be a bit choppy 
+!  on older systems. You can always turn off anti-aliasing (antialias=false) if
+!  your terminal is sluggish. Use only ONE of the Xft pairs below:
+!
+! Xft: Bitstream fonts
+!URxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=12:antialias=true:hinting=true
+!URxvt*boldFont: xft:Bitstream Vera Sans Mono:bold:pixelsize=12:antialias=true:hinting=true
+!
+! Xft: DejaVu fonts
+!URxvt*font: xft:DejaVu Sans Mono:pixelsize=12:antialias=true:hinting=true
+!URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=12:antialias=true:hinting=true
+!
+! Xft: Liberation fonts
+!URxvt*font: xft:Liberation Mono:pixelsize=13:antialias=true:hinting=true
+!URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=13:antialias=true:hinting=true
+!
+! Xft: Terminus fonts
+!URxvt*font: xft:terminus:pixelsize=15
+!URxvt*boldFont: xft:terminus:bold:pixelsize=15
+
+! Traditional fonts - a more traditional font setup in lieu of xft
+!URxvt*font:-*-courier-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
+!URxvt*boldFont:-*-courier-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
+
+! Replace blue folder colors with a lighter shade for clarity. To
+!  set colored folders and files within urxvt, xterm, and aterm, add
+!  the following line to your ~/.bashrc ($HOME/.bashrc) file under
+!  the heading "! User specific aliases and functions":
+!   alias ls="ls -h --color=auto"
+
+!
+!
+
+
+!Was causing distorted dpi/fonts in GTK apps
+!Also: upgraded to fontconfig-infinality
+URxvt.font:       [codeset=ASCII]xft:Source Code Pro:size=11,\
+                  [codeset=ISO10646]xft:WenQuanYi Micro Hei:regular
+URxvt.boldFont:   [codeset=ASCII]xft:Source Code Pro:bold:size=11,\
+                  [codeset=ISO10646]xft:WenQuanYi Micro Hei:bold
+URxvt.italicFont: [codeset=ASCII]xft:Source Code Pro:italic:size=11,\
+                  [codeset=ISO10646]xft:WenQuanYi Micro Hei:italic
+
+!xft:Terminus:pixelsize=12:italic:antialias=false,\
+URxvt.keysym.M-Up: command: \
+\033]710;[codeset=ASCII]xft:Source Code Pro:size=13, [codeset=ISO10646]xft:WenQuanYi Micro Hei:regular:size=13\007 \
+\033]711;[codeset=ASCII]xft:Source Code Pro:bold:size=13, [codeset=ISO10646]xft:WenQuanYi Micro Hei:bold:size=13\007 \
+\033]712;[codeset=ASCII]xft:Source Code Pro:italic:size=13, [codeset=ISO10646]xft:WenQuanYi Micro Hei:italic:size=13\007
+
+URxvt.keysym.M-Down: command: \
+\033]710;[codeset=ASCII]xft:Source Code Pro:size=10, [codeset=ISO10646]xft:WenQuanYi Micro Hei:regular\007 \
+\033]711;[codeset=ASCII]xft:Source Code Pro:bold:size=10, [codeset=ISO10646]xft:WenQuanYi Micro Hei:bold\007 \
+\033]712;[codeset=ASCII]xft:Source Code Pro:italic:size=10, [codeset=ISO10646]xft:WenQuanYi Micro Hei:italic\007
+
+
+!! Get DPI as X discovers it: xdpyinfo | grep dots
+Xft.dpi:                    96
+Xft.antialias:              false
+Xft.autohint:               true
+Xft.lcdfilter:              lcddefault
+Xft.hintstyle:              hintslight
+Xft.hinting:                true
+Xft.rgba:                   rgb
+
+URxvt.depth:                32
+URxvt.background:           rgba:1111/1111/1111/dddd
+
+URxvt.termName:             rxvt-256color
+!URxvt.background:           #212629
+URxvt.foreground:           #737c80
+URxvt.scrollBar:            false
+URxvt.scrollstyle:          plain
+URxvt.cursorBlink:          true
+URxvt.cursorColor:          #c1c8c9
+URxvt.colorBD:              #9a7b88
+
+URxvt.transparent:          true
+URxvt.allow_bold:           true
+
+!scrollback buffer lines    65535 is max on most machines (64 is default)
+URxvt.saveLines:            3000
+
+URxvt.iconFile:             /home/susy/.urxvt/iconarch.svg
+URxvt.inheritPixmap:        false
+URxvt.tintColor:            black
+URxvt.shading:              80
+
+URxvt.geometry:             80x24
+URxvt.loginShell:           false
+URxvt.meta:                 ignore
+URxvt.utmpInhibit:          true
+
+URxvt.perl-ext-common:      default,font-size,fullscreen,matcher,tabbed
+URxvt.matcher.button:       1
+URxvt.urlLauncher:          vimprobable2
+URxvt.url-select.launcher:  vimprobable2
+URxvt.url-select.underline: true
+URxvt.underlineURLs:        true
+URxvt.colorUL:              #4682B4
+
+URxvt.tabbed.tabbar-fg:     2
+URxvt.tabbed.tabbar-bg:     0
+URxvt.tabbed.tab-fg:        3
+URxvt.tabbed.tab-bg:        0
+
+URxvt.keysym.F11:           perl:fullscreen:switch
+
+! Prevent urls with these chars from breaking browser launch
+URxvt*cutchars:             `"()'*<>[]{|}'"
+
+!black
+URxvt*color0:               #111313
+URxvt*color8:               #424446
+!red
+URxvt*color1:               #9e6b71
+URxvt*color9:               #b69094
+!green
+URxvt*color2:               #719e6b
+URxvt*color10:              #94b690
+!yellow
+URxvt*color3:               #9e986c
+URxvt*color11:              #b5b18f
+!blue
+URxvt*color4:               #6c8b9e
+URxvt*color12:              #90a7b6
+!magenta
+URxvt*color5:               #986b9e
+URxvt*color13:              #b290b6
+!cyan
+URxvt*color6:               #6b9e98
+URxvt*color14:              #90b6b3
+!white
+URxvt*color7:               #b8baba
+URxvt*color15:              #cdcfce
+
+
+
+!URxvt.keysym.M-u:           perl:url-select:select_next
+!URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+!URxvt.keysym.M-s:           perl:keyboard-select:search
+
+!URxvt.keysym.C-Up:          perl:font-size:increase
+!URxvt.keysym.C-Down:        perl:font-size:decrease
+!URxvt.keysym.C-S-Up:        perl:font-size:incglobal
+!URxvt.keysym.C-S-Down:      perl:font-size:decglobal

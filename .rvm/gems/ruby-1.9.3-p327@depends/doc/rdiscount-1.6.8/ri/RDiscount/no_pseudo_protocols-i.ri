@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"no_pseudo_protocols:EFI""RDiscount#no_pseudo_protocols;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I">Do not process pseudo-protocols like <tt>[](id:name)</tt>;T:
+@file0FI"lib/rdiscount.rb;T

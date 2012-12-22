@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	data:EFI"Ronn::Document#data;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"AThe raw input data, read from path or stream and unmodified.;T:
+@file0FI"lib/ronn/document.rb;T

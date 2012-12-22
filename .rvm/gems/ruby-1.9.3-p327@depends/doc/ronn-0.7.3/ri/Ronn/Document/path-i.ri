@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	path:EFI"Ronn::Document#path;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"NPath to the Ronn document. This may be '-' or nil when the Ronn::Document;TI"%object is created with a stream.;T:
+@file0FI"lib/ronn/document.rb;T

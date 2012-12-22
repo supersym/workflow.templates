@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"organization:EFI" Ronn::Document#organization;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"CThe name of the group, organization, or individual responsible;TI"Dfor this document; displayed in the left portion of the footer.;T:
+@file0FI"lib/ronn/document.rb;T

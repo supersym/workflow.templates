@@ -1,0 +1,16 @@
+Sat, 22 Dec 2012 10:33:59 +0100
+lib/hpricot/modules.rb	Sat, 22 Dec 2012 10:33:54 +0100
+lib/hpricot/blankslate.rb	Sat, 22 Dec 2012 10:33:54 +0100
+lib/hpricot/xchar.rb	Sat, 22 Dec 2012 10:33:54 +0100
+lib/hpricot/traverse.rb	Sat, 22 Dec 2012 10:33:54 +0100
+lib/hpricot/tags.rb	Sat, 22 Dec 2012 10:33:54 +0100
+lib/hpricot/inspect.rb	Sat, 22 Dec 2012 10:33:54 +0100
+lib/hpricot/elements.rb	Sat, 22 Dec 2012 10:33:54 +0100
+lib/hpricot/tag.rb	Sat, 22 Dec 2012 10:33:54 +0100
+lib/hpricot/builder.rb	Sat, 22 Dec 2012 10:33:54 +0100
+lib/hpricot/parse.rb	Sat, 22 Dec 2012 10:33:54 +0100
+lib/hpricot/htmlinfo.rb	Sat, 22 Dec 2012 10:33:54 +0100
+lib/hpricot.rb	Sat, 22 Dec 2012 10:33:54 +0100
+README.md	Sat, 22 Dec 2012 10:33:54 +0100
+CHANGELOG	Sat, 22 Dec 2012 10:33:54 +0100
+COPYING	Sat, 22 Dec 2012 10:33:54 +0100

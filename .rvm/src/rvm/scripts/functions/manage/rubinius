@@ -1,0 +1,221 @@
+#!/usr/bin/env bash
+
+rbx_configure_with_path()
+{
+  typeset name _opt_path
+  name="${1:-}"
+  _opt_path="${2:-}"
+  [[ -d "${_opt_path}" ]] || return 1
+  [[ -d "${_opt_path}/include" ]] || return 2
+
+  rvm_configure_args="${rvm_configure_args:-} --with-${name}-dir=${_opt_path}"
+  rvm_configure_flags+=( --with-opt-dir="${_opt_path}" )
+
+  return 0
+}
+
+make_sure_its_enough_ram_for_rbx()
+{
+  typeset rvm_rbx_required_ram
+  rvm_rbx_required_ram_mb=500
+
+  __rvm_compiler_is_llvm ||
+  __rvm_is_enough_ram ${rvm_rbx_required_ram_mb} ||
+  {
+    if
+      (( ${rvm_force_flag:-0} == 0 ))
+    then
+      rvm_error "
+For rbx (Rubinius) more than ${rvm_rbx_required_ram_mb}MB of free RAM required.
+Use \`--force\` to compile rbx anyway.
+"
+      return 1
+    else
+      rvm_warn "Forced build with less than ${rvm_rbx_required_ram_mb}MB of free RAM."
+    fi
+  }
+}
+
+rubinius_install()
+{
+  typeset rvm_configure_args
+  typeset -a rvm_ruby_configure
+  unset CFLAGS LDFLAGS ARCHFLAGS # Important.
+  unset GEM_HOME GEM_PATH MY_RUBY_HOME IRBRC RBXOPT
+  export PATH
+  export ruby="$(__rvm_mri_ruby)"
+
+  make_sure_its_enough_ram_for_rbx || return $?
+
+  rvm_log "$rvm_ruby_string installing #dependencies "
+  __rvm_ensure_has_mri_ruby ||
+  {
+    rvm_log "No MRI ruby found, cannot build rbx."
+    return 1
+  }
+
+  __rvm_remove_rvm_from_path
+  __rvm_conditionally_add_bin_path
+
+  # #RBX 2.0 should now use libyaml which is for Psych.
+  case ${rvm_ruby_string} in
+    rbx-head*|rbx-2.*)
+      libyaml_installed || (
+        __rvm_setup_compile_environment libyaml
+        install_libyaml
+      )
+
+      rbx_configure_with_path libyaml "$rvm_path/usr" ||
+      {
+        rvm_error "Could not find 'lib' dir for libyaml, please make sure libyaml is compiled properly."
+        return 1
+      }
+      ;;
+  esac
+
+  __rvm_compatibility_flag_configuration --default-version=
+
+  if [[ -s "${rvm_archives_path}/${rvm_ruby_package_file}" ]] ||
+    [[ -n "${rvm_ruby_url:-}" ]] && file_exists_at_url "${rvm_ruby_url}"
+  then
+    rvm_head_flag=0
+  else
+    rvm_head_flag=1
+    if [[ "${rvm_ruby_version}" == 'head' ]]
+    then
+      true ${rvm_ruby_repo_branch:="master"}
+    else
+      true ${rvm_ruby_repo_branch:="${rvm_ruby_version}"}
+    fi
+  fi
+
+  if (( rvm_head_flag == 0 ))
+  then
+    # Install from tarball url.
+    rvm_log "$rvm_ruby_string #downloading ($rvm_ruby_package_file), this may take a while depending on your connection..."
+
+    "$rvm_scripts_path/fetch" "$rvm_ruby_url"
+    result=$?
+
+    if (( result > 0 ))
+    then
+      rvm_error "There has been an error while trying to fetch the source. Halting the installation."
+      return $result
+    fi
+
+    __rvm_log_command "extract" "$rvm_ruby_string - #extracting $rvm_ruby_package_file to ${rvm_src_path}/$rvm_ruby_string" \
+      __rvm_package extract "${rvm_archives_path}/$rvm_ruby_package_file" "${rvm_tmp_path:-/tmp}/rvm_src_$$" ||
+    case $? in
+      199)
+        rvm_error "\nUnrecognized archive format '$archive_format'"
+        return 199
+        ;;
+      *)
+        rvm_error "There has been an error while trying to extract the source. Halting the installation."
+        return 1
+        ;;
+    esac
+
+    # Remove the left over folder first.
+    __rvm_rm_rf "${rvm_src_path}/$rvm_ruby_string"
+
+    if [[ -n "${rvm_ruby_patch_level:-}" ]]
+    then
+      mv "${rvm_tmp_path:-/tmp}/rvm_src_$$/rubinius-release-${rvm_ruby_version}-${rvm_ruby_patch_level}" "${rvm_src_path}/$rvm_ruby_string"
+    else
+      mv "${rvm_src_path}/rubinius-${rvm_ruby_version}" "${rvm_src_path}/$rvm_ruby_string"
+    fi
+  else
+    # Install from repository
+    __rvm_db "rubinius_repo_url" "rvm_ruby_repo_url"
+    #rvm_ruby_home="$rvm_rubies_path/$rvm_ruby_interpreter-$rvm_ruby_version"
+    __rvm_fetch_from_github "rbx"
+    result=$?
+
+    if (( result > 0 ))
+    then
+      rvm_error "There has been an error while fetching the rbx git repo.  \nHalting the installation."
+      return $result
+    fi
+  fi
+
+  __rvm_cd "${rvm_src_path}/$rvm_ruby_string"
+
+  chmod +x ./configure
+
+  __rvm_apply_patches
+  result=$?
+
+  if (( result > 0 ))
+  then
+    rvm_error "There has been an error while trying to apply patches to rubinius.  \nHalting the installation."
+    return $result
+  fi
+  (( ${#rvm_configure_flags[@]} )) || rvm_configure_flags=( --skip-system )
+  rvm_configure_flags=( --prefix="$rvm_ruby_home"  "${rvm_configure_flags[@]}" )
+
+  __rvm_db "${rvm_ruby_interpreter}_configure_flags" "db_configure_flags"
+  if [[ -n "${ZSH_VERSION:-}" ]]
+  then rvm_configure_flags=( ${=db_configure_flags} "${rvm_configure_flags[@]}" )
+  else rvm_configure_flags=( ${db_configure_flags}  "${rvm_configure_flags[@]}" )
+  fi
+
+  # Explicitly disabled
+  (( ${rvm_llvm_flag:=1} )) || rvm_configure_flags+=( --disable-llvm )
+
+  __rvm_log_command "configure" "$rvm_ruby_string - #configuring" \
+    env "${rvm_configure_env[@]}" $rvm_wrappers_path/$ruby/ruby ./configure "${rvm_configure_flags[@]}" ||
+  {
+    result=$?
+    rvm_error "There has been an error while running 'configure'.  \nHalting the installation."
+    return $result
+  }
+
+  if [[ -n "${rvm_configure_args:-}" ]]
+  then
+    rvm_ruby_make="CONFIGURE_ARGS=${rvm_configure_args## } "
+  fi
+
+  rvm_ruby_make="${rvm_ruby_make:-}$rvm_wrappers_path/$ruby/rake install --trace"
+  __rvm_run "rake" "$rvm_ruby_make" "$rvm_ruby_string - #compiling"
+  result=$?
+
+  if (( result > 0 )) || ! [[ -d "$rvm_ruby_home" ]] || ! [[ -f "$rvm_ruby_home/bin/rbx" ]]
+  then
+    rvm_error "There has been an error while running '$rvm_ruby_make'.\nHalting the installation."
+    return $result
+  fi
+  unset ruby
+
+  # Symlink rubinius wrapper if not available
+  [[ -f "$rvm_ruby_home/bin/ruby" ]] ||
+    ln -fs "$rvm_ruby_home/bin/rbx" "$rvm_ruby_home/bin/ruby"
+
+  case ${rvm_ruby_string} in
+    rbx-head*|rubinius-head*|rbx-2.*|rubinius-2.*)
+      binaries=()
+      ;;
+    *) # older rbx had issues
+      # Install IRB Wrapper on Rubinius.
+      file_name="$rvm_ruby_home/bin/irb"
+      rm -f "$file_name"
+      printf "%b" '#!/usr/bin/env bash\n' > "$file_name"
+      printf "%b" "exec '$rvm_ruby_home/bin/rbx' 'irb' \"\$@\"\n" >> "$file_name"
+      [[ -x "$file_name" ]] || chmod +x "$file_name"
+
+      # Install Gem Wrapper on Rubinius.
+      file_name="$rvm_ruby_home/bin/gem"
+      cp -f "$rvm_ruby_home/lib/bin/gem.rb" "$file_name"
+      __rvm_inject_ruby_shebang "$file_name"
+      [[ -x "$file_name" ]] || chmod +x "$file_name"
+      unset file_name
+      binaries=(erb ri rdoc)
+      ;;
+  esac
+
+  (
+    rvm_create_flag=1 __rvm_use
+  )
+  __rvm_post_install
+  __rvm_bin_script
+}

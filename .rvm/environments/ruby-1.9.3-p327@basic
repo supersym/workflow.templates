@@ -1,0 +1,12 @@
+export PATH ; PATH="/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327@basic/bin:/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327@global/bin:/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/bin:/data/solo/ace/users/s/supersym/.rvm/bin:$PATH"
+export rvm_env_string ; rvm_env_string='ruby-1.9.3-p327@basic'
+export rvm_path ; rvm_path='/data/solo/ace/users/s/supersym/.rvm'
+export rvm_ruby_string ; rvm_ruby_string='ruby-1.9.3-p327'
+export rvm_gemset_name ; rvm_gemset_name='basic'
+export RUBY_VERSION ; RUBY_VERSION='ruby-1.9.3-p327'
+export GEM_HOME ; GEM_HOME='/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327@basic'
+export GEM_PATH ; GEM_PATH='/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327@basic:/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327@global'
+export MY_RUBY_HOME ; MY_RUBY_HOME='/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327'
+export IRBRC ; IRBRC='/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/.irbrc'
+unset MAGLEV_HOME
+unset RBXOPT

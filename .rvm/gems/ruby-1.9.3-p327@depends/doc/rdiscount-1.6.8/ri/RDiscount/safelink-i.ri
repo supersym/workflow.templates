@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"safelink:EFI"RDiscount#safelink;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"PDon't make hyperlinks from <tt>[][]</tt> links that have unknown URL types.;T:
+@file0FI"lib/rdiscount.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"autolink:EFI"RDiscount#autolink;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"EConvert URL in links, even if they aren't encased in <tt><></tt>;T:
+@file0FI"lib/rdiscount.rb;T

@@ -1,0 +1,24 @@
+[2012-12-22 10:26:16] '/data/solo/ace/users/s/supersym/.rvm/scripts/gemsets' initial # under ruby-1.9.3-p327
+Importing initial gemsets for ruby-1.9.3-p327.
+paths: /data/solo/ace/users/s/supersym/.rvm/gemsets/ruby/1.9.3/p327 /data/solo/ace/users/s/supersym/.rvm/gemsets/ruby/1.9.3 /data/solo/ace/users/s/supersym/.rvm/gemsets/ruby /data/solo/ace/users/s/supersym/.rvm/gemsets
+
+Installing gems listed in /data/solo/ace/users/s/supersym/.rvm/gemsets/default.gems file...
+
+
+Processing of /data/solo/ace/users/s/supersym/.rvm/gemsets/default.gems is complete.
+
+
+Installing gems listed in /data/solo/ace/users/s/supersym/.rvm/gemsets/global.gems file...
+
+installing rubygems-bundler ...
+rubygems-bundler  installed.
+installing bundler ...
+bundler  installed.
+installing rake ...
+rake  installed.
+installing rvm ...
+rvm  installed.
+
+Processing of /data/solo/ace/users/s/supersym/.rvm/gemsets/global.gems is complete.
+
+Installation of gems for ruby-1.9.3-p327 is complete.

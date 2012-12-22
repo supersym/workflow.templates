@@ -1,0 +1,1090 @@
+	CC = gcc
+	LD = ld
+	LDSHARED = gcc -shared
+	CFLAGS = -O3 -ggdb -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Werror=pointer-arith -Werror=write-strings -Werror=declaration-after-statement -Werror=implicit-function-declaration  -fPIC 
+	XCFLAGS = -include ruby/config.h -include ruby/missing.h -fvisibility=hidden -DRUBY_EXPORT
+	CPPFLAGS =   -I/data/solo/ace/users/s/supersym/.rvm/usr/include -I. -I.ext/include/x86_64-linux -I./include -I.
+	DLDFLAGS = -Wl,-soname,libruby.so.1.9  
+	SOLIBS = -lpthread -lrt -ldl -lcrypt -lm  
+compiling main.c
+compiling dmydln.c
+compiling dmyencoding.c
+compiling version.c
+compiling dmyversion.c
+compiling miniprelude.c
+compiling array.c
+compiling bignum.c
+bignum.c: In function ‘big_rshift’:
+bignum.c:3532:20: warning: variable ‘save_x’ set but not used [-Wunused-but-set-variable]
+compiling class.c
+class.c: In function ‘rb_obj_methods’:
+class.c:1016:8: warning: variable ‘args’ set but not used [-Wunused-but-set-variable]
+compiling compar.c
+compiling complex.c
+compiling dir.c
+dir.c: In function ‘dir_open_dir’:
+dir.c:1850:22: warning: variable ‘dirp’ set but not used [-Wunused-but-set-variable]
+compiling dln_find.c
+compiling enum.c
+compiling enumerator.c
+compiling error.c
+compiling eval.c
+compiling load.c
+compiling proc.c
+proc.c: In function ‘binding_free’:
+proc.c:241:19: warning: variable ‘bind’ set but not used [-Wunused-but-set-variable]
+compiling file.c
+compiling gc.c
+gc.c: In function ‘objspace_each_objects’:
+gc.c:2618:20: warning: variable ‘v’ set but not used [-Wunused-but-set-variable]
+compiling hash.c
+compiling inits.c
+compiling io.c
+io.c: In function ‘rb_io_each_byte’:
+io.c:3080:15: warning: variable ‘e’ set but not used [-Wunused-but-set-variable]
+io.c: In function ‘pipe_open’:
+io.c:5305:12: warning: variable ‘argv’ set but not used [-Wunused-but-set-variable]
+io.c:5304:9: warning: variable ‘argc’ set but not used [-Wunused-but-set-variable]
+compiling marshal.c
+compiling math.c
+compiling node.c
+compiling numeric.c
+compiling object.c
+compiling pack.c
+pack.c: In function ‘pack_pack’:
+pack.c:381:9: warning: variable ‘signed_p’ set but not used [-Wunused-but-set-variable]
+compiling parse.c
+parse.y: In function ‘parser_compile_string’:
+parse.y:5305:20: warning: variable ‘tmp’ set but not used [-Wunused-but-set-variable]
+parse.y: In function ‘rb_parser_compile_file’:
+parse.y:5366:20: warning: variable ‘tmp’ set but not used [-Wunused-but-set-variable]
+compiling process.c
+process.c: In function ‘rb_proc_exec_n’:
+process.c:1134:9: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+compiling random.c
+compiling range.c
+compiling rational.c
+compiling re.c
+compiling regcomp.c
+regcomp.c: In function ‘is_not_included’:
+regcomp.c:2436:13: warning: variable ‘c’ set but not used [-Wunused-but-set-variable]
+regcomp.c: In function ‘update_string_node_case_fold’:
+regcomp.c:3226:14: warning: variable ‘q’ set but not used [-Wunused-but-set-variable]
+compiling regenc.c
+compiling regerror.c
+compiling regexec.c
+compiling regparse.c
+regparse.c: In function ‘fetch_escaped_value’:
+regparse.c:2452:3: warning: variable ‘pfetch_prev’ set but not used [-Wunused-but-set-variable]
+regparse.c: In function ‘fetch_name’:
+regparse.c:2665:3: warning: variable ‘pfetch_prev’ set but not used [-Wunused-but-set-variable]
+regparse.c: In function ‘parse_posix_bracket’:
+regparse.c:4044:3: warning: variable ‘pfetch_prev’ set but not used [-Wunused-but-set-variable]
+regparse.c: In function ‘fetch_char_property_to_ctype’:
+regparse.c:4097:3: warning: variable ‘pfetch_prev’ set but not used [-Wunused-but-set-variable]
+regparse.c: In function ‘code_exist_check’:
+regparse.c:4262:3: warning: variable ‘pfetch_prev’ set but not used [-Wunused-but-set-variable]
+compiling regsyntax.c
+compiling ruby.c
+compiling safe.c
+compiling signal.c
+signal.c: In function ‘trap_handler’:
+signal.c:792:17: warning: variable ‘proc’ set but not used [-Wunused-but-set-variable]
+compiling sprintf.c
+compiling st.c
+compiling strftime.c
+compiling string.c
+compiling struct.c
+compiling time.c
+compiling transcode.c
+transcode.c: In function ‘rb_econv_open0’:
+transcode.c:985:25: warning: variable ‘denc’ set but not used [-Wunused-but-set-variable]
+transcode.c:985:18: warning: variable ‘senc’ set but not used [-Wunused-but-set-variable]
+transcode.c: In function ‘make_replacement’:
+transcode.c:2177:18: warning: variable ‘enc’ set but not used [-Wunused-but-set-variable]
+compiling util.c
+compiling variable.c
+compiling compile.c
+compile.c: In function ‘validate_label’:
+compile.c:444:10: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+compile.c: In function ‘iseq_compile_each’:
+compile.c:3320:5: warning: variable ‘mid’ set but not used [-Wunused-but-set-variable]
+compile.c: In function ‘iseq_build_from_ary_exception’:
+compile.c:5272:6: warning: variable ‘sp’ set but not used [-Wunused-but-set-variable]
+compiling debug.c
+compiling iseq.c
+iseq.c: In function ‘iseq_load’:
+iseq.c:444:51: warning: variable ‘misc’ set but not used [-Wunused-but-set-variable]
+iseq.c:444:38: warning: variable ‘format_type’ set but not used [-Wunused-but-set-variable]
+iseq.c:444:28: warning: variable ‘version2’ set but not used [-Wunused-but-set-variable]
+iseq.c:444:18: warning: variable ‘version1’ set but not used [-Wunused-but-set-variable]
+iseq.c:444:11: warning: variable ‘magic’ set but not used [-Wunused-but-set-variable]
+iseq.c: In function ‘rb_iseq_parameters’:
+iseq.c:1378:15: warning: variable ‘s’ set but not used [-Wunused-but-set-variable]
+compiling vm.c
+In file included from vm.c:23:0:
+vm_insnhelper.c: In function ‘vm_expandarray’:
+vm_insnhelper.c:1642:20: warning: variable ‘tmp_ary’ set but not used [-Wunused-but-set-variable]
+In file included from vm.c:27:0:
+vm_method.c: In function ‘rb_gc_mark_unlinked_live_method_entries’:
+vm_method.c:102:100: warning: unused variable ‘curr_ume’ [-Wunused-variable]
+vm_method.c:102:85: warning: unused variable ‘prev_ume’ [-Wunused-variable]
+In file included from vm.c:28:0:
+vm_eval.c: In function ‘raise_method_missing’:
+vm_eval.c:509:8: warning: variable ‘id’ set but not used [-Wunused-but-set-variable]
+vm.c: In function ‘rb_iseq_eval’:
+vm.c:1446:20: warning: variable ‘tmp’ set but not used [-Wunused-but-set-variable]
+vm.c: In function ‘rb_iseq_eval_main’:
+vm.c:1460:20: warning: variable ‘tmp’ set but not used [-Wunused-but-set-variable]
+compiling vm_dump.c
+compiling thread.c
+In file included from thread.c:204:0:
+thread.c: In function ‘rb_mutex_lock’:
+thread_pthread.c:384:8: warning: assuming signed overflow does not occur when assuming that (X + c) < X is always false [-Wstrict-overflow]
+compiling cont.c
+cont.c: In function ‘cont_capture’:
+cont.c:429:20: warning: variable ‘contval’ set but not used [-Wunused-but-set-variable]
+compiling ./enc/ascii.c
+compiling ./enc/us_ascii.c
+compiling ./enc/unicode.c
+compiling ./enc/utf_8.c
+compiling newline.c
+compiling ./missing/strlcpy.c
+compiling ./missing/strlcat.c
+compiling ./missing/setproctitle.c
+compiling addr2line.c
+addr2line.c: In function ‘parse_debug_line_cu’:
+addr2line.c:230:18: warning: variable ‘isa’ set but not used [-Wunused-but-set-variable]
+addr2line.c:227:9: warning: variable ‘end_sequence’ set but not used [-Wunused-but-set-variable]
+addr2line.c:226:9: warning: variable ‘basic_block’ set but not used [-Wunused-but-set-variable]
+addr2line.c:224:18: warning: variable ‘column’ set but not used [-Wunused-but-set-variable]
+addr2line.c:218:20: warning: variable ‘standard_opcode_lengths’ set but not used [-Wunused-but-set-variable]
+compiling dmyext.c
+linking miniruby
+rbconfig.rb updated
+generating enc.mk
+compiling dln.c
+compiling encoding.c
+generating prelude.c
+compiling prelude.c
+linking static-library libruby-static.a
+linking shared-library libruby.so.1.9.1
+generating encdb.h
+encdb.h unchanged
+making enc
+make[1]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327'
+compiling ./enc/encdb.c
+linking encoding encdb.so
+compiling ./enc/big5.c
+linking encoding big5.so
+compiling ./enc/cp949.c
+linking encoding cp949.so
+compiling ./enc/emacs_mule.c
+linking encoding emacs_mule.so
+compiling ./enc/euc_jp.c
+linking encoding euc_jp.so
+compiling ./enc/euc_kr.c
+linking encoding euc_kr.so
+compiling ./enc/euc_tw.c
+linking encoding euc_tw.so
+compiling ./enc/gb2312.c
+linking encoding gb2312.so
+compiling ./enc/gb18030.c
+linking encoding gb18030.so
+compiling ./enc/gbk.c
+linking encoding gbk.so
+compiling ./enc/iso_8859_1.c
+linking encoding iso_8859_1.so
+compiling ./enc/iso_8859_2.c
+linking encoding iso_8859_2.so
+compiling ./enc/iso_8859_3.c
+linking encoding iso_8859_3.so
+compiling ./enc/iso_8859_4.c
+linking encoding iso_8859_4.so
+compiling ./enc/iso_8859_5.c
+linking encoding iso_8859_5.so
+compiling ./enc/iso_8859_6.c
+linking encoding iso_8859_6.so
+compiling ./enc/iso_8859_7.c
+linking encoding iso_8859_7.so
+compiling ./enc/iso_8859_8.c
+linking encoding iso_8859_8.so
+compiling ./enc/iso_8859_9.c
+linking encoding iso_8859_9.so
+compiling ./enc/iso_8859_10.c
+linking encoding iso_8859_10.so
+compiling ./enc/iso_8859_11.c
+linking encoding iso_8859_11.so
+compiling ./enc/iso_8859_13.c
+linking encoding iso_8859_13.so
+compiling ./enc/iso_8859_14.c
+linking encoding iso_8859_14.so
+compiling ./enc/iso_8859_15.c
+linking encoding iso_8859_15.so
+compiling ./enc/iso_8859_16.c
+linking encoding iso_8859_16.so
+compiling ./enc/koi8_r.c
+linking encoding koi8_r.so
+compiling ./enc/koi8_u.c
+linking encoding koi8_u.so
+compiling ./enc/shift_jis.c
+linking encoding shift_jis.so
+compiling ./enc/utf_16be.c
+linking encoding utf_16be.so
+compiling ./enc/utf_16le.c
+linking encoding utf_16le.so
+compiling ./enc/utf_32be.c
+linking encoding utf_32be.so
+compiling ./enc/utf_32le.c
+linking encoding utf_32le.so
+compiling ./enc/windows_1251.c
+linking encoding windows_1251.so
+make[1]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327'
+making srcs under enc
+make[1]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327'
+make[1]: Nothing to be done for `srcs'.
+make[1]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327'
+generating transdb.h
+transdb.h unchanged
+making trans
+make[1]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327'
+compiling ./enc/trans/transdb.c
+linking transcoder transdb.so
+compiling ./enc/trans/big5.c
+linking transcoder big5.so
+compiling ./enc/trans/chinese.c
+linking transcoder chinese.so
+compiling ./enc/trans/emoji.c
+linking transcoder emoji.so
+compiling ./enc/trans/emoji_iso2022_kddi.c
+linking transcoder emoji_iso2022_kddi.so
+compiling ./enc/trans/emoji_sjis_docomo.c
+linking transcoder emoji_sjis_docomo.so
+compiling ./enc/trans/emoji_sjis_kddi.c
+linking transcoder emoji_sjis_kddi.so
+compiling ./enc/trans/emoji_sjis_softbank.c
+linking transcoder emoji_sjis_softbank.so
+compiling ./enc/trans/escape.c
+linking transcoder escape.so
+compiling ./enc/trans/gb18030.c
+linking transcoder gb18030.so
+compiling ./enc/trans/gbk.c
+linking transcoder gbk.so
+compiling ./enc/trans/iso2022.c
+linking transcoder iso2022.so
+compiling ./enc/trans/japanese.c
+linking transcoder japanese.so
+compiling ./enc/trans/japanese_euc.c
+linking transcoder japanese_euc.so
+compiling ./enc/trans/japanese_sjis.c
+linking transcoder japanese_sjis.so
+compiling ./enc/trans/korean.c
+linking transcoder korean.so
+compiling ./enc/trans/single_byte.c
+linking transcoder single_byte.so
+compiling ./enc/trans/utf8_mac.c
+linking transcoder utf8_mac.so
+compiling ./enc/trans/utf_16_32.c
+linking transcoder utf_16_32.so
+make[1]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327'
+making encs
+make[1]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327'
+make[1]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327'
+configuring -test-/array/resize
+configuring -test-/bug-3571
+configuring -test-/bug-3662
+configuring -test-/funcall
+configuring -test-/load/dot.dot
+configuring -test-/old_thread_select
+configuring -test-/st/numhash
+configuring -test-/string
+configuring -test-/wait_for_single_fd
+configuring -test-/win32/dln
+Failed to configure -test-/win32/dln. It will not be installed.
+configuring -test-/win32/fd_setsize
+Failed to configure -test-/win32/fd_setsize. It will not be installed.
+configuring bigdecimal
+configuring continuation
+configuring coverage
+configuring curses
+configuring date
+configuring dbm
+configuring digest
+configuring digest/bubblebabble
+configuring digest/md5
+configuring digest/rmd160
+configuring digest/sha1
+configuring digest/sha2
+configuring dl
+configuring dl/callback
+configuring dl/win32
+Failed to configure dl/win32. It will not be installed.
+configuring etc
+configuring fcntl
+configuring fiber
+configuring fiddle
+configuring gdbm
+configuring iconv
+configuring io/console
+configuring io/nonblock
+configuring io/wait
+configuring json
+configuring json/generator
+configuring json/parser
+configuring mathn/complex
+configuring mathn/rational
+configuring nkf
+configuring objspace
+configuring openssl
+configuring pathname
+configuring psych
+configuring pty
+configuring racc/cparse
+configuring readline
+configuring ripper
+configuring sdbm
+configuring socket
+configuring stringio
+configuring strscan
+configuring syck
+configuring syslog
+configuring tk
+check functions.........
+check struct members..
+check libraries....
+Use ActiveTcl libraries (if available).
+Search tclConfig.sh and tkConfig.sh..............................
+Valid [tclConfig.sh, tkConfig.sh] are found in [["/usr/lib", "/usr/lib"]]
+Use [tclConfig.sh, tkConfig.sh] == ["/usr/lib/tclConfig.sh", "/usr/lib/tkConfig.sh"]
+Use X11 libraries (or use TK_XINCLUDES/TK_XLIBSW information on tkConfig.sh).
+
+Find Tcl/Tk libraries. Make tcltklib.so which is required by Ruby/Tk.
+configuring tk/tkutil
+configuring win32ole
+Failed to configure win32ole. It will not be installed.
+configuring zlib
+make[1]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/array/resize'
+compiling resize.c
+linking shared-object -test-/array/resize.so
+installing default resize libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/array/resize'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/bug-3571'
+compiling bug.c
+linking shared-object -test-/bug-3571/bug.so
+installing default bug libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/bug-3571'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/bug-3662'
+compiling bug.c
+linking shared-object -test-/bug-3662/bug.so
+installing default bug libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/bug-3662'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/funcall'
+compiling passing_block.c
+linking shared-object -test-/funcall/funcall.so
+installing default funcall libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/funcall'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/load/dot.dot'
+compiling dot.dot.c
+linking shared-object -test-/load/dot.dot/dot.dot.so
+installing default dot.dot libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/load/dot.dot'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/old_thread_select'
+compiling old_thread_select.c
+old_thread_select.c: In function ‘old_thread_select’:
+old_thread_select.c:57:5: warning: ‘rb_thread_select’ is deprecated (declared at ../../.././include/ruby/intern.h:379) [-Wdeprecated-declarations]
+linking shared-object -test-/old_thread_select/old_thread_select.so
+installing default old_thread_select libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/old_thread_select'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/st/numhash'
+compiling numhash.c
+linking shared-object -test-/st/numhash.so
+installing default numhash libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/st/numhash'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/string'
+compiling modify.c
+compiling enc_associate.c
+compiling init.c
+compiling ellipsize.c
+compiling cstr.c
+compiling set_len.c
+linking shared-object -test-/string/string.so
+installing default string libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/string'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/wait_for_single_fd'
+compiling wait_for_single_fd.c
+linking shared-object -test-/wait_for_single_fd/wait_for_single_fd.so
+installing default wait_for_single_fd libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/wait_for_single_fd'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/win32/dln'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/win32/dln'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/win32/fd_setsize'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/-test-/win32/fd_setsize'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/bigdecimal'
+compiling bigdecimal.c
+bigdecimal.c: In function ‘BigDecimal_prec’:
+bigdecimal.c:306:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_hash’:
+bigdecimal.c:319:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_dump’:
+bigdecimal.c:336:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_load’:
+bigdecimal.c:358:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_to_i’:
+bigdecimal.c:631:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_to_f’:
+bigdecimal.c:676:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_coerce’:
+bigdecimal.c:767:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_add’:
+bigdecimal.c:808:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_sub’:
+bigdecimal.c:860:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimalCmp’:
+bigdecimal.c:890:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_neg’:
+bigdecimal.c:1071:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_mult’:
+bigdecimal.c:1093:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_divide’:
+bigdecimal.c:1112:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_div’:
+bigdecimal.c:1151:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_DoDivmod’:
+bigdecimal.c:1174:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_mod’:
+bigdecimal.c:1251:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_divremain’:
+bigdecimal.c:1264:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_divmod’:
+bigdecimal.c:1334:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_div2’:
+bigdecimal.c:1347:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_add2’:
+bigdecimal.c:1383:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_sub2’:
+bigdecimal.c:1400:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_mult2’:
+bigdecimal.c:1417:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_abs’:
+bigdecimal.c:1440:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_sqrt’:
+bigdecimal.c:1462:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_fix’:
+bigdecimal.c:1481:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_round’:
+bigdecimal.c:1517:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_truncate’:
+bigdecimal.c:1575:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_frac’:
+bigdecimal.c:1604:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_floor’:
+bigdecimal.c:1637:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_ceil’:
+bigdecimal.c:1686:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_to_s’:
+bigdecimal.c:1743:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_split’:
+bigdecimal.c:1823:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_inspect’:
+bigdecimal.c:1877:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_power’:
+bigdecimal.c:2019:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘BigDecimal_new’:
+bigdecimal.c:2268:5: warning: variable ‘vStack’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘VpMult’:
+bigdecimal.c:4191:36: warning: variable ‘ind_be’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘VpCtoV’:
+bigdecimal.c:4988:12: warning: variable ‘loc’ set but not used [-Wunused-but-set-variable]
+bigdecimal.c: In function ‘VpSqrt’:
+bigdecimal.c:5334:20: warning: variable ‘f_prec’ set but not used [-Wunused-but-set-variable]
+linking shared-object bigdecimal.so
+installing default bigdecimal libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/bigdecimal'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/continuation'
+compiling continuation.c
+linking shared-object continuation.so
+installing default continuation libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/continuation'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/coverage'
+compiling coverage.c
+linking shared-object coverage.so
+installing default coverage libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/coverage'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/curses'
+compiling curses.c
+curses.c: In function ‘window_cury’:
+curses.c:1632:9: warning: variable ‘x’ set but not used [-Wunused-but-set-variable]
+curses.c: In function ‘window_curx’:
+curses.c:1648:12: warning: variable ‘y’ set but not used [-Wunused-but-set-variable]
+curses.c: In function ‘window_begy’:
+curses.c:1712:9: warning: variable ‘x’ set but not used [-Wunused-but-set-variable]
+curses.c: In function ‘window_begx’:
+curses.c:1732:12: warning: variable ‘y’ set but not used [-Wunused-but-set-variable]
+linking shared-object curses.so
+installing default curses libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/curses'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/date'
+compiling date_core.c
+compiling date_parse.c
+compiling date_strptime.c
+compiling date_strftime.c
+linking shared-object date_core.so
+installing default date_core libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/date'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/dbm'
+compiling dbm.c
+linking shared-object dbm.so
+installing default dbm libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/dbm'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/digest'
+compiling digest.c
+linking shared-object digest.so
+installing digest libraries
+installing default digest libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/digest'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/digest/bubblebabble'
+compiling bubblebabble.c
+linking shared-object digest/bubblebabble.so
+installing default bubblebabble libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/digest/bubblebabble'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/digest/md5'
+compiling md5init.c
+compiling md5ossl.c
+linking shared-object digest/md5.so
+installing default md5 libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/digest/md5'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/digest/rmd160'
+compiling rmd160init.c
+compiling rmd160ossl.c
+linking shared-object digest/rmd160.so
+installing default rmd160 libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/digest/rmd160'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/digest/sha1'
+compiling sha1init.c
+compiling sha1ossl.c
+linking shared-object digest/sha1.so
+installing default sha1 libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/digest/sha1'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/digest/sha2'
+compiling sha2init.c
+compiling sha2ossl.c
+linking shared-object digest/sha2.so
+installing default sha2 libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/digest/sha2'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/dl'
+compiling cptr.c
+cptr.c: In function ‘dlptr_init’:
+cptr.c:69:22: warning: variable ‘data’ set but not used [-Wunused-but-set-variable]
+compiling dl.c
+compiling cfunc.c
+compiling handle.c
+linking shared-object dl.so
+installing dl libraries
+installing default dl libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/dl'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/dl/callback'
+generating callback.c
+compiling callback.c
+compiling callback-0.c
+callback-0.c: In function ‘rb_dl_callback_void_0_0_cdecl’:
+callback-0.c:12:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_0_1_cdecl’:
+callback-0.c:23:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_0_2_cdecl’:
+callback-0.c:34:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_0_3_cdecl’:
+callback-0.c:45:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_0_4_cdecl’:
+callback-0.c:56:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_1_0_cdecl’:
+callback-0.c:67:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_1_1_cdecl’:
+callback-0.c:78:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_1_2_cdecl’:
+callback-0.c:89:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_1_3_cdecl’:
+callback-0.c:100:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_1_4_cdecl’:
+callback-0.c:111:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_2_0_cdecl’:
+callback-0.c:122:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_2_1_cdecl’:
+callback-0.c:134:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_2_2_cdecl’:
+callback-0.c:146:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_2_3_cdecl’:
+callback-0.c:158:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_2_4_cdecl’:
+callback-0.c:170:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_3_0_cdecl’:
+callback-0.c:182:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_3_1_cdecl’:
+callback-0.c:195:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_3_2_cdecl’:
+callback-0.c:208:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_3_3_cdecl’:
+callback-0.c:221:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_3_4_cdecl’:
+callback-0.c:234:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_4_0_cdecl’:
+callback-0.c:247:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_4_1_cdecl’:
+callback-0.c:261:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_4_2_cdecl’:
+callback-0.c:275:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_4_3_cdecl’:
+callback-0.c:289:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_4_4_cdecl’:
+callback-0.c:303:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_5_0_cdecl’:
+callback-0.c:317:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_5_1_cdecl’:
+callback-0.c:332:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_5_2_cdecl’:
+callback-0.c:347:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_5_3_cdecl’:
+callback-0.c:362:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_5_4_cdecl’:
+callback-0.c:377:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_6_0_cdecl’:
+callback-0.c:392:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_6_1_cdecl’:
+callback-0.c:408:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_6_2_cdecl’:
+callback-0.c:424:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_6_3_cdecl’:
+callback-0.c:440:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_6_4_cdecl’:
+callback-0.c:456:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_7_0_cdecl’:
+callback-0.c:472:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_7_1_cdecl’:
+callback-0.c:489:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_7_2_cdecl’:
+callback-0.c:506:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_7_3_cdecl’:
+callback-0.c:523:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_7_4_cdecl’:
+callback-0.c:540:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_8_0_cdecl’:
+callback-0.c:557:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_8_1_cdecl’:
+callback-0.c:575:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_8_2_cdecl’:
+callback-0.c:593:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_8_3_cdecl’:
+callback-0.c:611:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_8_4_cdecl’:
+callback-0.c:629:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_9_0_cdecl’:
+callback-0.c:647:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_9_1_cdecl’:
+callback-0.c:666:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_9_2_cdecl’:
+callback-0.c:685:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_9_3_cdecl’:
+callback-0.c:704:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_9_4_cdecl’:
+callback-0.c:723:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_10_0_cdecl’:
+callback-0.c:742:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_10_1_cdecl’:
+callback-0.c:762:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_10_2_cdecl’:
+callback-0.c:782:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_10_3_cdecl’:
+callback-0.c:802:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_10_4_cdecl’:
+callback-0.c:822:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_11_0_cdecl’:
+callback-0.c:842:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_11_1_cdecl’:
+callback-0.c:863:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_11_2_cdecl’:
+callback-0.c:884:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_11_3_cdecl’:
+callback-0.c:905:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_11_4_cdecl’:
+callback-0.c:926:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_12_0_cdecl’:
+callback-0.c:947:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_12_1_cdecl’:
+callback-0.c:969:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_12_2_cdecl’:
+callback-0.c:991:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_12_3_cdecl’:
+callback-0.c:1013:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_12_4_cdecl’:
+callback-0.c:1035:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_13_0_cdecl’:
+callback-0.c:1057:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_13_1_cdecl’:
+callback-0.c:1080:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_13_2_cdecl’:
+callback-0.c:1103:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_13_3_cdecl’:
+callback-0.c:1126:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_13_4_cdecl’:
+callback-0.c:1149:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_14_0_cdecl’:
+callback-0.c:1172:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_14_1_cdecl’:
+callback-0.c:1196:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_14_2_cdecl’:
+callback-0.c:1220:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_14_3_cdecl’:
+callback-0.c:1244:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_14_4_cdecl’:
+callback-0.c:1268:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_15_0_cdecl’:
+callback-0.c:1292:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_15_1_cdecl’:
+callback-0.c:1317:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_15_2_cdecl’:
+callback-0.c:1342:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_15_3_cdecl’:
+callback-0.c:1367:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_15_4_cdecl’:
+callback-0.c:1392:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_16_0_cdecl’:
+callback-0.c:1417:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_16_1_cdecl’:
+callback-0.c:1443:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_16_2_cdecl’:
+callback-0.c:1469:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_16_3_cdecl’:
+callback-0.c:1495:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_16_4_cdecl’:
+callback-0.c:1521:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_17_0_cdecl’:
+callback-0.c:1547:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_17_1_cdecl’:
+callback-0.c:1574:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_17_2_cdecl’:
+callback-0.c:1601:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_17_3_cdecl’:
+callback-0.c:1628:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_17_4_cdecl’:
+callback-0.c:1655:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_18_0_cdecl’:
+callback-0.c:1682:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_18_1_cdecl’:
+callback-0.c:1710:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_18_2_cdecl’:
+callback-0.c:1738:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_18_3_cdecl’:
+callback-0.c:1766:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_18_4_cdecl’:
+callback-0.c:1794:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_19_0_cdecl’:
+callback-0.c:1822:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_19_1_cdecl’:
+callback-0.c:1851:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_19_2_cdecl’:
+callback-0.c:1880:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_19_3_cdecl’:
+callback-0.c:1909:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+callback-0.c: In function ‘rb_dl_callback_void_19_4_cdecl’:
+callback-0.c:1938:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+compiling callback-1.c
+compiling callback-2.c
+compiling callback-3.c
+compiling callback-4.c
+compiling callback-5.c
+compiling callback-6.c
+compiling callback-7.c
+compiling callback-8.c
+linking shared-object dl/callback.so
+installing default callback libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/dl/callback'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/dl/win32'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/dl/win32'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/etc'
+compiling etc.c
+linking shared-object etc.so
+installing default etc libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/etc'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/fcntl'
+compiling fcntl.c
+linking shared-object fcntl.so
+installing default fcntl libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/fcntl'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/fiber'
+compiling fiber.c
+linking shared-object fiber.so
+installing default fiber libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/fiber'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/fiddle'
+compiling conversions.c
+compiling closure.c
+compiling function.c
+compiling fiddle.c
+linking shared-object fiddle.so
+installing default fiddle libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/fiddle'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/gdbm'
+compiling gdbm.c
+gdbm.c: In function ‘fgdbm_initialize’:
+gdbm.c:210:25: warning: passing argument 5 of ‘gdbm_open’ from incompatible pointer type [enabled by default]
+In file included from gdbm.c:14:0:
+/usr/include/gdbm.h:101:18: note: expected ‘void (*)(const char *)’ but argument is of type ‘void (*)(char *)’
+gdbm.c:216:29: warning: passing argument 5 of ‘gdbm_open’ from incompatible pointer type [enabled by default]
+In file included from gdbm.c:14:0:
+/usr/include/gdbm.h:101:18: note: expected ‘void (*)(const char *)’ but argument is of type ‘void (*)(char *)’
+gdbm.c:219:29: warning: passing argument 5 of ‘gdbm_open’ from incompatible pointer type [enabled by default]
+In file included from gdbm.c:14:0:
+/usr/include/gdbm.h:101:18: note: expected ‘void (*)(const char *)’ but argument is of type ‘void (*)(char *)’
+gdbm.c:222:29: warning: passing argument 5 of ‘gdbm_open’ from incompatible pointer type [enabled by default]
+In file included from gdbm.c:14:0:
+/usr/include/gdbm.h:101:18: note: expected ‘void (*)(const char *)’ but argument is of type ‘void (*)(char *)’
+linking shared-object gdbm.so
+installing default gdbm libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/gdbm'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/iconv'
+compiling iconv.c
+iconv.c: In function ‘get_iconv_opt_i’:
+iconv.c:567:17: warning: variable ‘val’ set but not used [-Wunused-but-set-variable]
+linking shared-object iconv.so
+installing default iconv libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/iconv'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/io/console'
+compiling console.c
+linking shared-object io/console.so
+installing default console libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/io/console'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/io/nonblock'
+compiling nonblock.c
+linking shared-object io/nonblock.so
+installing default nonblock libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/io/nonblock'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/io/wait'
+compiling wait.c
+linking shared-object io/wait.so
+installing default wait libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/io/wait'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/json'
+installing default libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/json'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/json/generator'
+compiling generator.c
+generator.c: In function ‘cState_aref’:
+generator.c:736:5: warning: variable ‘state’ set but not used [-Wunused-but-set-variable]
+linking shared-object json/ext/generator.so
+installing default generator libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/json/generator'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/json/parser'
+compiling parser.c
+linking shared-object json/ext/parser.so
+installing default parser libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/json/parser'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/mathn/complex'
+compiling complex.c
+linking shared-object mathn/complex.so
+installing default complex libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/mathn/complex'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/mathn/rational'
+compiling rational.c
+linking shared-object mathn/rational.so
+installing default rational libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/mathn/rational'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/nkf'
+compiling nkf.c
+nkf.c: In function ‘rb_nkf_convert’:
+nkf.c:138:20: warning: variable ‘tmp’ set but not used [-Wunused-but-set-variable]
+linking shared-object nkf.so
+installing default nkf libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/nkf'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/objspace'
+compiling objspace.c
+linking shared-object objspace.so
+installing default objspace libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/objspace'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/openssl'
+compiling ossl_pkcs7.c
+compiling ossl_x509.c
+compiling ossl_ocsp.c
+compiling ossl_pkey_dsa.c
+compiling ossl_x509ext.c
+compiling ossl.c
+compiling ossl_x509store.c
+compiling ossl_rand.c
+compiling ossl_x509cert.c
+compiling ossl_bn.c
+compiling ossl_pkey_dh.c
+compiling ossl_pkcs12.c
+compiling ossl_pkey_rsa.c
+compiling ossl_ssl_session.c
+compiling ossl_asn1.c
+compiling ossl_x509req.c
+compiling ossl_bio.c
+compiling ossl_cipher.c
+compiling ossl_x509crl.c
+compiling ossl_x509attr.c
+compiling openssl_missing.c
+compiling ossl_config.c
+compiling ossl_digest.c
+compiling ossl_pkcs5.c
+compiling ossl_engine.c
+compiling ossl_x509revoked.c
+compiling ossl_pkey_ec.c
+compiling ossl_x509name.c
+compiling ossl_ns_spki.c
+compiling ossl_hmac.c
+compiling ossl_pkey.c
+compiling ossl_ssl.c
+ossl_ssl.c: In function ‘ossl_sslctx_session_new_cb’:
+ossl_ssl.c:382:35: warning: variable ‘ret_obj’ set but not used [-Wunused-but-set-variable]
+ossl_ssl.c: In function ‘ossl_sslctx_session_remove_cb’:
+ossl_ssl.c:431:38: warning: variable ‘ret_obj’ set but not used [-Wunused-but-set-variable]
+ossl_ssl.c: In function ‘ssl_servername_cb’:
+ossl_ssl.c:508:25: warning: variable ‘ret_obj’ set but not used [-Wunused-but-set-variable]
+linking shared-object openssl.so
+installing default openssl libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/openssl'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/pathname'
+compiling pathname.c
+linking shared-object pathname.so
+installing default pathname libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/pathname'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/psych'
+compiling to_ruby.c
+compiling yaml_tree.c
+compiling parser.c
+compiling psych.c
+compiling emitter.c
+linking shared-object psych.so
+installing default psych libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/psych'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/pty'
+compiling pty.c
+linking shared-object pty.so
+installing default pty libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/pty'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/racc/cparse'
+compiling cparse.c
+linking shared-object racc/cparse.so
+installing default cparse libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/racc/cparse'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/readline'
+compiling readline.c
+linking shared-object readline.so
+installing default readline libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/readline'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/ripper'
+compiling ripper.c
+ripper.y: In function ‘parser_magic_comment’:
+ripper.y:6456:36: warning: variable ‘vend’ set but not used [-Wunused-but-set-variable]
+ripper.y:6456:29: warning: variable ‘vbeg’ set but not used [-Wunused-but-set-variable]
+linking shared-object ripper.so
+installing default ripper libraries
+checking ../.././parse.y and ../.././ext/ripper/eventids2.c
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/ripper'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/sdbm'
+compiling init.c
+compiling _sdbm.c
+linking shared-object sdbm.so
+installing default sdbm libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/sdbm'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/socket'
+generating constant definitions
+compiling init.c
+compiling constants.c
+compiling basicsocket.c
+compiling socket.c
+socket.c: In function ‘sock_s_gethostbyaddr’:
+socket.c:957:22: warning: variable ‘sa’ set but not used [-Wunused-but-set-variable]
+compiling ipsocket.c
+compiling tcpsocket.c
+compiling tcpserver.c
+compiling sockssocket.c
+compiling udpsocket.c
+compiling unixsocket.c
+compiling unixserver.c
+compiling option.c
+compiling ancdata.c
+ancdata.c: In function ‘bsock_sendmsg_internal’:
+ancdata.c:1168:13: warning: variable ‘last_type’ set but not used [-Wunused-but-set-variable]
+ancdata.c:1167:13: warning: variable ‘last_level’ set but not used [-Wunused-but-set-variable]
+compiling raddrinfo.c
+linking shared-object socket.so
+installing default socket libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/socket'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/stringio'
+compiling stringio.c
+linking shared-object stringio.so
+installing default stringio libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/stringio'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/strscan'
+compiling strscan.c
+linking shared-object strscan.so
+installing default strscan libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/strscan'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/syck'
+compiling yaml2byte.c
+compiling node.c
+compiling emitter.c
+compiling token.c
+token.re: In function ‘sycklex_yaml_utf8’:
+token.re:541:36: warning: variable ‘lvl’ set but not used [-Wunused-but-set-variable]
+compiling gram.c
+compiling handler.c
+compiling rubyext.c
+rubyext.c: In function ‘syck_seq_initialize’:
+rubyext.c:1529:15: warning: variable ‘node’ set but not used [-Wunused-but-set-variable]
+compiling syck.c
+compiling bytecode.c
+compiling implicit.c
+linking shared-object syck.so
+installing default syck libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/syck'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/syslog'
+compiling syslog.c
+linking shared-object syslog.so
+installing default syslog libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/syslog'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/tk'
+compiling stubs.c
+compiling tcltklib.c
+tcltklib.c: In function ‘lib_eventloop_core’:
+tcltklib.c:2185:20: warning: variable ‘t’ set but not used [-Wunused-but-set-variable]
+tcltklib.c: In function ‘lib_thread_callback’:
+tcltklib.c:2952:17: warning: variable ‘foundEvent’ set but not used [-Wunused-but-set-variable]
+tcltklib.c: In function ‘ip_rbUpdateObjCmd’:
+tcltklib.c:3882:10: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+tcltklib.c: In function ‘ip_rb_threadUpdateObjCmd’:
+tcltklib.c:4036:10: warning: variable ‘flags’ set but not used [-Wunused-but-set-variable]
+tcltklib.c: In function ‘lib_toUTF8_core’:
+tcltklib.c:7947:17: warning: variable ‘interp’ set but not used [-Wunused-but-set-variable]
+tcltklib.c: In function ‘ip_invoke_core’:
+tcltklib.c:8564:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+tcltklib.c: At top level:
+tcltklib.c:2052:1: warning: ‘eventloop_sleep’ defined but not used [-Wunused-function]
+linking shared-object tcltklib.so
+installing tcltklib libraries
+installing default tcltklib libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/tk'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/tk/tkutil'
+compiling tkutil.c
+linking shared-object tkutil.so
+installing default tkutil libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/tk/tkutil'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/win32ole'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/win32ole'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/zlib'
+compiling zlib.c
+zlib.c: In function ‘zstream_sync’:
+zlib.c:901:11: warning: variable ‘rest’ set but not used [-Wunused-but-set-variable]
+zlib.c: In function ‘gzfile_getc’:
+zlib.c:2563:20: warning: variable ‘res’ set but not used [-Wunused-but-set-variable]
+linking shared-object zlib.so
+installing default zlib libraries
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327/ext/zlib'
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327'
+linking ruby
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327'
+make[1]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/ruby-1.9.3-p327'

@@ -1,0 +1,102 @@
+#!/usr/bin/env bash
+
+__rvm_add_user_to_group()
+{
+  case "$(uname)" in
+    "OpenBSD")
+      usermod -G "$1" "$2"
+      ;;
+    "FreeBSD")
+      pw usermod "$2" -G "$1"
+      ;;
+    "Linux")
+      if [[ -f "/etc/SuSE-release" ]] ; then
+        groupmod -A "$2" "$1"
+      else
+        /usr/sbin/usermod -a -G "$1" "$2"
+      fi
+    ;;
+    "Darwin")
+      dscl . -append "/Groups/$1" GroupMembership "$2"
+      ;;
+    "SunOS")
+      groups="$(id -G "$2") \"$1\""
+      usermod -G "${1// /, }" "$2"
+      ;;
+  esac
+}
+
+__rvm_show_user_groups()
+{
+  groups "$1" | sed -e 's/.*:[[:space:]]*//' | tr ' ' $'\n'
+}
+
+__rvm_is_user_in_group()
+{
+  __rvm_show_user_groups "$2" | grep "^$1$" >/dev/null
+}
+
+__rvm_list_all_users()
+{
+  case "$(uname)" in
+    "Darwin")
+      dscl . -search /Users PrimaryGroupID 20 | GREP_OPTIONS="" \grep PrimaryGroupID | cut -f 1
+      ;;
+    *)
+      GREP_OPTIONS="" \grep -xF -f <(cat /etc/passwd | cut -d: -f1) <(find /home -mindepth 1 -maxdepth 1 -type d | cut -d '/' -f 3)
+      ;;
+  esac
+}
+
+__rvm_group_exists()
+{
+  case "$(uname)" in
+    (Darwin)
+      dscl . -read "/Groups/$1" 1>/dev/null 2>&1 || return $?
+      ;;
+    (*)
+      GREP_OPTIONS="" \grep "$1" /etc/group >/dev/null 2>&1
+      ;;
+  esac
+}
+
+__rvm_create_group()
+{
+  typeset -a __group_params
+  __group_params=()
+
+  if [[ -n "${2:-}" ]]
+  then __group_params+=( -g "$2" )
+  fi
+
+  case "$(uname)" in
+    (Linux|SunOS|OpenBSD)
+      groupadd "${__group_params[@]}" "$1"
+      ;;
+    (FreeBSD)
+      pw groupadd "${__group_params[@]}" "$1" -q
+      ;;
+    (Darwin)
+      typeset _new_group_id
+      if
+        [[ -n "${2:-}" ]]
+      then
+        _new_group_id="$2"
+      else
+        _new_group_id="501" #only gids > 500 show up in user preferences
+        #Find an open gid
+        while true
+        do
+          name=$(dscl . search /groups PrimaryGroupID ${_new_group_id} | cut -f1 -s)
+          if [[ -z "$name" ]]
+          then break
+          fi
+          _new_group_id=$(( _new_group_id + 1 ))
+        done
+      fi
+      # Create the group, isn't OSX "fun"?! :)
+      # Thanks for the assist frogor of ##osx-server on freenode! Appreciate the assist!
+      dscl . -create "/Groups/$1" gid "${_new_group_id}"
+      ;;
+  esac
+}

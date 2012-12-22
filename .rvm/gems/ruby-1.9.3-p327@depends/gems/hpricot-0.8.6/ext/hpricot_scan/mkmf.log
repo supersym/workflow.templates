@@ -1,0 +1,24 @@
+have_library: checking for main() in -lc... -------------------- yes
+
+"gcc -o conftest -I/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/include/ruby-1.9.1/x86_64-linux -I/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/include/ruby-1.9.1/ruby/backward -I/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/include/ruby-1.9.1 -I.    -I/data/solo/ace/users/s/supersym/.rvm/usr/include  -O3 -ggdb -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC  conftest.c  -L. -L/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/lib -Wl,-R/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/lib -L/data/solo/ace/users/s/supersym/.rvm/usr/lib -Wl,-R/data/solo/ace/users/s/supersym/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic -L/data/solo/ace/users/s/supersym/.rvm/usr/lib  -Wl,-R/data/solo/ace/users/s/supersym/.rvm/usr/lib      -Wl,-R -Wl,/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/lib -L/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/include/ruby-1.9.1/x86_64-linux -I/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/include/ruby-1.9.1/ruby/backward -I/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/include/ruby-1.9.1 -I.    -I/data/solo/ace/users/s/supersym/.rvm/usr/include  -O3 -ggdb -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC  conftest.c  -L. -L/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/lib -Wl,-R/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/lib -L/data/solo/ace/users/s/supersym/.rvm/usr/lib -Wl,-R/data/solo/ace/users/s/supersym/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic -L/data/solo/ace/users/s/supersym/.rvm/usr/lib  -Wl,-R/data/solo/ace/users/s/supersym/.rvm/usr/lib      -Wl,-R -Wl,/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/lib -L/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/lib -lruby -lc  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:5:28: warning: variable ‘p’ set but not used [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+

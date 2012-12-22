@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+# Preamble
+
+# Exit immediately on errors
+set -e
+
+printf "\n%s\n%s\n%s\n%s" "Please choose your installation method below:" "1) Fully automatic delegated trust" "2) Paranoid (read source code first)" "Please enter 1 or 2:"
+read -n 1 installation_method
+
+# Get the stable version and install automatically
+[[ "${installation_method}" == 1 ]] && \
+\curl -L https://get.rvm.io | bash -s stable || \
+{
+    # Paranoid mode: download source and inspect first
+    curl -L get.rvm.io > rvm-install && clear
+    echo 'Finished download, please inspect the code by pressing any key,...'
+    read && less rvm-install && echo 'Press Control+C to abort or any key to continue setup...'
+    read && bash < ./rvm-install
+}
+
+# Sorry, can't help you with what OS packages you need but here's some output
+rvm requirements
+
+
+TODODODODO
+
+
+rvm get head
+  114  rvm install 1.9.3
+    115  vim .zshrc
+      116  zsh
+        117  ll
+          118  la
+            119  rvm gemset create basic
+              120  rvm use 1.9.3@basic --create --default
+                121  /bin/bash --login
+                  122  rvm usse 1.9.3@depends --create --default
+                    123  /bin/bash --login
+
+                    
+gem i  mustache rdiscount hpricot ronn
+
+
+

@@ -1,0 +1,70 @@
+/bin/sh ./support/mkinstalldirs /data/solo/ace/users/s/supersym/.rvm/usr/include \
+	/data/solo/ace/users/s/supersym/.rvm/usr/include/readline /data/solo/ace/users/s/supersym/.rvm/usr/lib \
+	/data/solo/ace/users/s/supersym/.rvm/usr/info /data/solo/ace/users/s/supersym/.rvm/usr/man/man3
+for f in readline.h chardefs.h keymaps.h history.h tilde.h rlstdc.h rlconf.h rltypedefs.h; do \
+	/usr/bin/install -c -m 644 ./$f /data/solo/ace/users/s/supersym/.rvm/usr/include/readline ; \
+done
+test -d shlib || mkdir shlib
+( cd shlib ; make  all )
+make[1]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/readline-5.2/shlib'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/readline-5.2/shlib'
+( if test -d doc ; then \
+	cd doc && \
+	make  infodir=/data/solo/ace/users/s/supersym/.rvm/usr/info DESTDIR= install; \
+  fi )
+make[1]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/readline-5.2/doc'
+/bin/sh ../support/mkdirs /data/solo/ace/users/s/supersym/.rvm/usr/info /data/solo/ace/users/s/supersym/.rvm/usr/man/man3
+if test -n "" ; then \
+	/bin/sh ../support/mkdirs  ; \
+fi
+if test -f readline.info; then \
+	/usr/bin/install -c -m 644 readline.info /data/solo/ace/users/s/supersym/.rvm/usr/info/readline.info; \
+else \
+	/usr/bin/install -c -m 644 ./readline.info /data/solo/ace/users/s/supersym/.rvm/usr/info/readline.info; \
+fi
+if test -f rluserman.info; then \
+	/usr/bin/install -c -m 644 rluserman.info /data/solo/ace/users/s/supersym/.rvm/usr/info/rluserman.info; \
+else \
+	/usr/bin/install -c -m 644 ./rluserman.info /data/solo/ace/users/s/supersym/.rvm/usr/info/rluserman.info; \
+fi
+if test -f history.info; then \
+	/usr/bin/install -c -m 644 history.info /data/solo/ace/users/s/supersym/.rvm/usr/info/history.info; \
+else \
+	/usr/bin/install -c -m 644 ./history.info /data/solo/ace/users/s/supersym/.rvm/usr/info/history.info; \
+fi
+if /bin/sh -c 'install-info --version' >/dev/null 2>&1; then \
+	install-info --dir-file=/data/solo/ace/users/s/supersym/.rvm/usr/info/dir \
+		/data/solo/ace/users/s/supersym/.rvm/usr/info/readline.info ; \
+	install-info --dir-file=/data/solo/ace/users/s/supersym/.rvm/usr/info/dir \
+		/data/solo/ace/users/s/supersym/.rvm/usr/info/history.info ; \
+	install-info --dir-file=/data/solo/ace/users/s/supersym/.rvm/usr/info/dir \
+		/data/solo/ace/users/s/supersym/.rvm/usr/info/rluserman.info ; \
+else true; fi
+/usr/bin/install -c -m 644 ./readline.3 /data/solo/ace/users/s/supersym/.rvm/usr/man/man3/readline.3
+/usr/bin/install -c -m 644 ./history.3 /data/solo/ace/users/s/supersym/.rvm/usr/man/man3/history.3
+if test -n "" ; then \
+	if test -f readline.html; then \
+		/usr/bin/install -c -m 644 readline.html /readline.html; \
+	else \
+		/usr/bin/install -c -m 644 ./readline.html /readline.html; \
+	fi ; \
+	if test -f history.html; then \
+		/usr/bin/install -c -m 644 history.html /history.html; \
+	else \
+		/usr/bin/install -c -m 644 ./history.html /history.html; \
+	fi ; \
+	if test -f rluserman.html; then \
+		/usr/bin/install -c -m 644 rluserman.html /rluserman.html; \
+	else \
+		/usr/bin/install -c -m 644 ./rluserman.html /rluserman.html; \
+	fi ; \
+fi
+make[1]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/readline-5.2/doc'
+( cd shlib ; make  DESTDIR= install )
+make[1]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/readline-5.2/shlib'
+/bin/sh ../support/mkdirs /data/solo/ace/users/s/supersym/.rvm/usr/lib
+/bin/sh ../support/shlib-install -O linux-gnu -d /data/solo/ace/users/s/supersym/.rvm/usr/lib -b /data/solo/ace/users/s/supersym/.rvm/usr/bin -i "/usr/bin/install -c -m 644" libhistory.so.5.2
+/bin/sh ../support/shlib-install -O linux-gnu -d /data/solo/ace/users/s/supersym/.rvm/usr/lib -b /data/solo/ace/users/s/supersym/.rvm/usr/bin -i "/usr/bin/install -c -m 644" libreadline.so.5.2
+install: you may need to run ldconfig
+make[1]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/readline-5.2/shlib'

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	name:EFI"Ronn::Document#name;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[	I"6The man pages name: usually a single word name of;TI"?a program or filename; displayed along with the section in;TI"Dthe left and right portions of the header as well as the bottom;TI"!right section of the footer.;T:
+@file0FI"lib/ronn/document.rb;T

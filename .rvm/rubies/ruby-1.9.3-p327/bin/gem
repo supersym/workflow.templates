@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+ENV['GEM_HOME']=ENV['GEM_HOME'] || '/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327'
+ENV['GEM_PATH']=ENV['GEM_PATH'] || '/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327:/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327@global'
+ENV['PATH']='/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327/bin:/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327@global/bin:/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/bin:' + ENV['PATH']
+
+#--
+# Copyright 2006 by Chad Fowler, Rich Kilmer, Jim Weirich and others.
+# All rights reserved.
+# See LICENSE.txt for permissions.
+#++
+
+require 'rubygems'
+require 'rubygems/gem_runner'
+require 'rubygems/exceptions'
+
+required_version = Gem::Requirement.new ">= 1.8.7"
+
+unless required_version.satisfied_by? Gem.ruby_version then
+  abort "Expected Ruby Version #{required_version}, is #{Gem.ruby_version}"
+end
+
+args = ARGV.clone
+
+begin
+  Gem::GemRunner.new.run args
+rescue Gem::SystemExitException => e
+  exit e.exit_code
+end
+

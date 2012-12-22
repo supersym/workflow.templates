@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+ENV['GEM_HOME']=ENV['GEM_HOME'] || '/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327'
+ENV['GEM_PATH']=ENV['GEM_PATH'] || '/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327:/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327@global'
+ENV['PATH']='/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327/bin:/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327@global/bin:/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/bin:' + ENV['PATH']
+
+
+begin
+  gem 'rdoc'
+rescue NameError => e # --disable-gems
+  raise unless e.name == :gem
+rescue Gem::LoadError
+end
+
+require 'rdoc/ri/driver'
+
+RDoc::RI::Driver.run ARGV

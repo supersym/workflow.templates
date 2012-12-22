@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Class: Rack::Bug::MustachePanel</title>
+
+  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../../lib/rack/bug/panels/mustache_panel_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/rack/bug/panels/mustache_panel.rb">lib/rack/bug/panels/mustache_panel.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Panel</p>
+        
+      </div>
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">CLASS</span> <a href="MustachePanel/View.html">Rack::Bug::MustachePanel::View</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-reset">::reset</a></li>
+          
+          <li><a href="#method-c-times">::times</a></li>
+          
+          <li><a href="#method-c-variables">::variables</a></li>
+          
+          <li><a href="#method-i-content">#content</a></li>
+          
+          <li><a href="#method-i-heading">#heading</a></li>
+          
+          <li><a href="#method-i-name">#name</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../../Mustache.html">Mustache</a></li>
+        
+          <li><a href="../../Mustache/Context.html">Mustache::Context</a></li>
+        
+          <li><a href="../../Mustache/ContextMiss.html">Mustache::ContextMiss</a></li>
+        
+          <li><a href="../../Mustache/Generator.html">Mustache::Generator</a></li>
+        
+          <li><a href="../../Mustache/Parser.html">Mustache::Parser</a></li>
+        
+          <li><a href="../../Mustache/Parser/SyntaxError.html">Mustache::Parser::SyntaxError</a></li>
+        
+          <li><a href="../../Mustache/Sinatra.html">Mustache::Sinatra</a></li>
+        
+          <li><a href="../../Mustache/Sinatra/Helpers.html">Mustache::Sinatra::Helpers</a></li>
+        
+          <li><a href="../../Mustache/Template.html">Mustache::Template</a></li>
+        
+          <li><a href="../../Rack.html">Rack</a></li>
+        
+          <li><a href="../../Rack/Bug.html">Rack::Bug</a></li>
+        
+          <li><a href="../../Rack/Bug/MustachePanel.html">Rack::Bug::MustachePanel</a></li>
+        
+          <li><a href="../../Rack/Bug/MustachePanel/View.html">Rack::Bug::MustachePanel::View</a></li>
+        
+          <li><a href="../../Object.html">Object</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">Rack::Bug::MustachePanel</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="MustachePanel.html">MustachePanel</a> is a <a
+href="../Bug.html">Rack::Bug</a> panel which tracks the time spent
+rendering <a href="../../Mustache.html">Mustache</a> views as well as all
+the variables accessed during view rendering.</p>
+
+<p>It can be used to track down slow partials and ensure you’re only
+generating data you need.</p>
+
+<p>Also, it’s fun.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="reset-method" class="method-detail ">
+          <a name="method-c-reset"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">reset</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Clear out our page load-specific variables.</p>
+            
+
+            
+            <div class="method-source-code" id="reset-source">
+<pre>
+<span class="ruby-comment"># File lib/rack/bug/panels/mustache_panel.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">reset</span>
+  <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-string">&quot;rack.bug.mustache.times&quot;</span>] = {}
+  <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-string">&quot;rack.bug.mustache.vars&quot;</span>] = {}
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- reset-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- reset-method -->
+
+      
+        <div id="times-method" class="method-detail ">
+          <a name="method-c-times"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">times</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>The view render times for this page load</p>
+            
+
+            
+            <div class="method-source-code" id="times-source">
+<pre>
+<span class="ruby-comment"># File lib/rack/bug/panels/mustache_panel.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">times</span>
+  <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-string">&quot;rack.bug.mustache.times&quot;</span>] <span class="ruby-operator">||=</span> {}
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- times-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- times-method -->
+
+      
+        <div id="variables-method" class="method-detail ">
+          <a name="method-c-variables"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">variables</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>The variables used on this page load</p>
+            
+
+            
+            <div class="method-source-code" id="variables-source">
+<pre>
+<span class="ruby-comment"># File lib/rack/bug/panels/mustache_panel.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">variables</span>
+  <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-string">&quot;rack.bug.mustache.vars&quot;</span>] <span class="ruby-operator">||=</span> {}
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- variables-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- variables-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="content-method" class="method-detail ">
+          <a name="method-i-content"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">content</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>The content of our <a href="../Bug.html">Rack::Bug</a> panel</p>
+            
+
+            
+            <div class="method-source-code" id="content-source">
+<pre>
+<span class="ruby-comment"># File lib/rack/bug/panels/mustache_panel.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">content</span>
+  <span class="ruby-constant">View</span>.<span class="ruby-identifier">render</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">reset</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- content-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- content-method -->
+
+      
+        <div id="heading-method" class="method-detail ">
+          <a name="method-i-heading"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">heading</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>The string used for our tab in Rack::Bug’s navigation bar</p>
+            
+
+            
+            <div class="method-source-code" id="heading-source">
+<pre>
+<span class="ruby-comment"># File lib/rack/bug/panels/mustache_panel.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">heading</span>
+  <span class="ruby-string">&quot;{{%.2fms}}&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">times</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-value">0.0</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sum</span>, <span class="ruby-identifier">obj</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">sum</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">obj</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- heading-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- heading-method -->
+
+      
+        <div id="name-method" class="method-detail ">
+          <a name="method-i-name"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">name</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>The name of this <a href="../Bug.html">Rack::Bug</a> panel</p>
+            
+
+            
+            <div class="method-source-code" id="name-source">
+<pre>
+<span class="ruby-comment"># File lib/rack/bug/panels/mustache_panel.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-string">&quot;mustache&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- name-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- name-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

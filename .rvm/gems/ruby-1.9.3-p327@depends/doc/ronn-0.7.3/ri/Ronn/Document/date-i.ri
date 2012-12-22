@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	date:EFI"Ronn::Document#date;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"=The date the document was published; center displayed in;TI"the document footer.;T:
+@file0FI"lib/ronn/document.rb;T

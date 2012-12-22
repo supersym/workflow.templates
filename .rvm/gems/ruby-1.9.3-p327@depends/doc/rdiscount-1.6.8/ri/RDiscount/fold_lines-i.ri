@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"fold_lines:EFI"RDiscount#fold_lines;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"BRedCloth compatible line folding -- not used for Markdown but;TI" included for compatibility.;T:
+@file0FI"lib/rdiscount.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"tagline:EFI"Ronn::Document#tagline;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"=Single sentence description of the thing being described;TI"5by this man page; displayed in the NAME section.;T:
+@file0FI"lib/ronn/document.rb;T

@@ -1,0 +1,9 @@
+/data/solo/ace/users/s/supersym/.zshrc
+/data/solo/ace/users/s/supersym/.xdefaults
+/data/solo/ace/users/s/supersym/.bash_login
+/data/solo/ace/users/s/supersym/.config/mr/config.d/mr.vcsh
+/data/solo/ace/users/s/supersym/.mrconfig
+/data/solo/ace/users/s/supersym/.config/vcsh/repo.d/vim.git/COMMIT_EDITMSG
+/data/solo/ace/users/s/supersym/.config/1-setup/rvm.setup
+/tmp/yaourt-tmp-supersym/aur-vcsh-git/PKGBUILD
+/data/solo/ace/users/s/supersym/zshsusy

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"no_image:EFI"RDiscount#no_image;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"PDo not process <tt>![]</tt> and remove <tt><img></tt> tags from the output.;T:
+@file0FI"lib/rdiscount.rb;T

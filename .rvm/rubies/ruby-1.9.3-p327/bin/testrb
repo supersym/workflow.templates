@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+ENV['GEM_HOME']=ENV['GEM_HOME'] || '/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327'
+ENV['GEM_PATH']=ENV['GEM_PATH'] || '/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327:/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327@global'
+ENV['PATH']='/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327/bin:/data/solo/ace/users/s/supersym/.rvm/gems/ruby-1.9.3-p327@global/bin:/data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/bin:' + ENV['PATH']
+
+require 'test/unit'
+tests = Test::Unit::AutoRunner.new(true)
+tests.options.banner.sub!(/\[options\]/, '\& tests...')
+unless tests.process_args(ARGV)
+  abort tests.options.banner
+end
+files = tests.to_run
+$0 = files.size == 1 ? File.basename(files[0]) : files.to_s
+exit tests.run

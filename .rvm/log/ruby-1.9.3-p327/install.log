@@ -1,0 +1,24 @@
+./miniruby -I./lib -I. -I.ext/common  ./tool/rbinstall.rb --make="make" --dest-dir="" --extout=".ext" --mflags="" --make-flags="" --data-mode=0644 --prog-mode=0755 --installed-list .installed.list --mantype="doc"
+installing binary commands:   /data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/bin
+installing base libraries:    /data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/lib
+installing arch files:        /data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/x86_64-linux
+installing pkgconfig data:    /data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/lib/pkgconfig
+installing command scripts:   /data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/bin
+installing library scripts:   /data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1
+installing common headers:    /data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/include/ruby-1.9.1
+installing manpages:          /data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/share/man/man1
+installing extension objects: /data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/x86_64-linux
+installing extension objects: /data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/site_ruby/1.9.1/x86_64-linux
+installing extension objects: /data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/vendor_ruby/1.9.1/x86_64-linux
+installing extension headers: /data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/include/ruby-1.9.1/x86_64-linux
+installing extension scripts: /data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1
+installing extension scripts: /data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/site_ruby/1.9.1
+installing extension scripts: /data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/vendor_ruby/1.9.1
+installing extension headers: /data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/include/ruby-1.9.1/ruby
+installing default gems:      /data/solo/ace/users/s/supersym/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/gems/1.9.1 (cache, doc, gems, specifications)
+                              rake 0.9.2.2
+                              rdoc 3.9.4
+                              minitest 2.5.1
+                              json 1.5.4
+                              io-console 0.3
+                              bigdecimal 1.1.0

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"manual:EFI"Ronn::Document#manual;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"=The manual this document belongs to; center displayed in;TI"the header.;T:
+@file0FI"lib/ronn/document.rb;T

@@ -1,0 +1,1090 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Class: Ronn::Template</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/ronn/template_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/ronn/template.rb">lib/ronn/template.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Mustache</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-custom_title-3F">#custom_title?</a></li>
+          
+          <li><a href="#method-i-date">#date</a></li>
+          
+          <li><a href="#method-i-generator">#generator</a></li>
+          
+          <li><a href="#method-i-inline_stylesheet">#inline_stylesheet</a></li>
+          
+          <li><a href="#method-i-manual">#manual</a></li>
+          
+          <li><a href="#method-i-missing_styles">#missing_styles</a></li>
+          
+          <li><a href="#method-i-name">#name</a></li>
+          
+          <li><a href="#method-i-name_and_section-3F">#name_and_section?</a></li>
+          
+          <li><a href="#method-i-organization">#organization</a></li>
+          
+          <li><a href="#method-i-page_name">#page_name</a></li>
+          
+          <li><a href="#method-i-remote_stylesheet">#remote_stylesheet</a></li>
+          
+          <li><a href="#method-i-render">#render</a></li>
+          
+          <li><a href="#method-i-section">#section</a></li>
+          
+          <li><a href="#method-i-section_heads">#section_heads</a></li>
+          
+          <li><a href="#method-i-style_files">#style_files</a></li>
+          
+          <li><a href="#method-i-styles">#styles</a></li>
+          
+          <li><a href="#method-i-stylesheet">#stylesheet</a></li>
+          
+          <li><a href="#method-i-stylesheet_tags">#stylesheet_tags</a></li>
+          
+          <li><a href="#method-i-stylesheets">#stylesheets</a></li>
+          
+          <li><a href="#method-i-tagline">#tagline</a></li>
+          
+          <li><a href="#method-i-tagline-3F">#tagline?</a></li>
+          
+          <li><a href="#method-i-title">#title</a></li>
+          
+          <li><a href="#method-i-wrap_class_name">#wrap_class_name</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../AUTHORS.html">AUTHORS</a></li>
+        
+          <li class="file"><a href="../COPYING.html">COPYING</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../Ronn.html">Ronn</a></li>
+        
+          <li><a href="../Ronn/Document.html">Ronn::Document</a></li>
+        
+          <li><a href="../Ronn/Index.html">Ronn::Index</a></li>
+        
+          <li><a href="../Ronn/Reference.html">Ronn::Reference</a></li>
+        
+          <li><a href="../Ronn/RoffFilter.html">Ronn::RoffFilter</a></li>
+        
+          <li><a href="../Ronn/Server.html">Ronn::Server</a></li>
+        
+          <li><a href="../Ronn/Template.html">Ronn::Template</a></li>
+        
+          <li><a href="../Ronn/Utils.html">Ronn::Utils</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">Ronn::Template</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="style_path-attribute-method" class="method-detail">
+          <a name="style_path"></a>
+          
+          <a name="style_path="></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">style_path</span><span
+              class="attribute-access-type">[RW]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(document, style_path=ENV['RONN_STYLE'].to_s.split(':'))</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="new-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">document</span>, <span class="ruby-identifier">style_path</span>=<span class="ruby-constant">ENV</span>[<span class="ruby-string">'RONN_STYLE'</span>].<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">':'</span>))
+  <span class="ruby-ivar">@document</span> = <span class="ruby-identifier">document</span>
+  <span class="ruby-ivar">@style_path</span> = <span class="ruby-identifier">style_path</span> <span class="ruby-operator">+</span> [<span class="ruby-constant">Template</span>.<span class="ruby-identifier">template_path</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="custom_title-3F-method" class="method-detail ">
+          <a name="method-i-custom_title-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">custom_title?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="custom_title-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">custom_title?</span>
+  <span class="ruby-operator">!</span><span class="ruby-identifier">name_and_section?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">tagline</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- custom_title-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- custom_title-3F-method -->
+
+      
+        <div id="date-method" class="method-detail ">
+          <a name="method-i-date"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">date</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="date-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">date</span>
+  <span class="ruby-ivar">@document</span>.<span class="ruby-identifier">date</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">'%B %Y'</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- date-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- date-method -->
+
+      
+        <div id="generator-method" class="method-detail ">
+          <a name="method-i-generator"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">generator</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="generator-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generator</span>
+  <span class="ruby-node">&quot;Ronn/v#{Ronn.version} (http://github.com/rtomayko/ronn/tree/#{Ronn.revision})&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- generator-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- generator-method -->
+
+      
+        <div id="inline_stylesheet-method" class="method-detail ">
+          <a name="method-i-inline_stylesheet"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">inline_stylesheet</span><span
+              class="method-args">(path, media='all')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>TEMPLATE CSS LOADING</p>
+            
+
+            
+            <div class="method-source-code" id="inline_stylesheet-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inline_stylesheet</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">media</span>=<span class="ruby-string">'all'</span>)
+  <span class="ruby-identifier">data</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">data</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">%/\*.+?\*/|</span>, <span class="ruby-string">''</span>)   <span class="ruby-comment"># comments</span>
+  <span class="ruby-identifier">data</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/([;{,]) *\n/</span>, <span class="ruby-string">'\1'</span>) <span class="ruby-comment"># end-of-line whitespace</span>
+  <span class="ruby-identifier">data</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\n{2,}/</span>, <span class="ruby-string">&quot;\n&quot;</span>)      <span class="ruby-comment"># collapse lines</span>
+  <span class="ruby-identifier">data</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/[; ]+\}/</span>, <span class="ruby-string">'}'</span>)       <span class="ruby-comment"># superfluous trailing semi-colons</span>
+  <span class="ruby-identifier">data</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/([{;,+])[ ]+/</span>, <span class="ruby-string">'\1'</span>) <span class="ruby-comment"># whitespace around things</span>
+  <span class="ruby-identifier">data</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/[ \t]+/</span>, <span class="ruby-string">' '</span>)       <span class="ruby-comment"># coalescing whitespace elsewhere</span>
+  <span class="ruby-identifier">data</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/^/</span>, <span class="ruby-string">'  '</span>)            <span class="ruby-comment"># indent</span>
+  <span class="ruby-identifier">data</span>.<span class="ruby-identifier">strip!</span>
+  [
+    <span class="ruby-node">&quot;&lt;style type='text/css' media='#{media}'&gt;&quot;</span>,
+    <span class="ruby-node">&quot;/* style: #{File.basename(path, '.css')} */&quot;</span>,
+    <span class="ruby-identifier">data</span>,
+    <span class="ruby-string">&quot;&lt;/style&gt;&quot;</span>
+  ].<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n  &quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- inline_stylesheet-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- inline_stylesheet-method -->
+
+      
+        <div id="manual-method" class="method-detail ">
+          <a name="method-i-manual"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">manual</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="manual-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">manual</span>
+  <span class="ruby-ivar">@document</span>.<span class="ruby-identifier">manual</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- manual-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- manual-method -->
+
+      
+        <div id="missing_styles-method" class="method-detail ">
+          <a name="method-i-missing_styles"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">missing_styles</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Array of style names for which no file could be found.</p>
+            
+
+            
+            <div class="method-source-code" id="missing_styles-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">missing_styles</span>
+  <span class="ruby-identifier">style_files</span>.
+    <span class="ruby-identifier">zip</span>(<span class="ruby-identifier">files</span>).
+    <span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">style</span>, <span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">nil?</span> }.
+    <span class="ruby-identifier">map</span>    { <span class="ruby-operator">|</span><span class="ruby-identifier">style</span>, <span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-identifier">style</span> }
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- missing_styles-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- missing_styles-method -->
+
+      
+        <div id="name-method" class="method-detail ">
+          <a name="method-i-name"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">name</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Basic document attributes</p>
+            
+
+            
+            <div class="method-source-code" id="name-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-ivar">@document</span>.<span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- name-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- name-method -->
+
+      
+        <div id="name_and_section-3F-method" class="method-detail ">
+          <a name="method-i-name_and_section-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">name_and_section?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="name_and_section-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">name_and_section?</span>
+  <span class="ruby-identifier">name</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">section</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- name_and_section-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- name_and_section-3F-method -->
+
+      
+        <div id="organization-method" class="method-detail ">
+          <a name="method-i-organization"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">organization</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="organization-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">organization</span>
+  <span class="ruby-ivar">@document</span>.<span class="ruby-identifier">organization</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- organization-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- organization-method -->
+
+      
+        <div id="page_name-method" class="method-detail ">
+          <a name="method-i-page_name"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">page_name</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="page_name-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">page_name</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">section</span>
+    <span class="ruby-node">&quot;#{name}(#{section})&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- page_name-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- page_name-method -->
+
+      
+        <div id="remote_stylesheet-method" class="method-detail ">
+          <a name="method-i-remote_stylesheet"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">remote_stylesheet</span><span
+              class="method-args">(name, media='all')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="remote_stylesheet-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remote_stylesheet</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">media</span>=<span class="ruby-string">'all'</span>)
+  <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-node">&quot;../template/#{name}.css&quot;</span>, <span class="ruby-keyword">__FILE__</span>)
+  <span class="ruby-node">&quot;&lt;link rel='stylesheet' type='text/css' media='#{media}' href='#{path}'&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- remote_stylesheet-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- remote_stylesheet-method -->
+
+      
+        <div id="render-method" class="method-detail ">
+          <a name="method-i-render"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">render</span><span
+              class="method-args">(template='default')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="render-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">render</span>(<span class="ruby-identifier">template</span>=<span class="ruby-string">'default'</span>)
+  <span class="ruby-keyword">super</span> <span class="ruby-identifier">template</span>[<span class="ruby-value">0</span>,<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'/'</span> <span class="ruby-operator">?</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">template</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">partial</span>(<span class="ruby-identifier">template</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- render-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- render-method -->
+
+      
+        <div id="section-method" class="method-detail ">
+          <a name="method-i-section"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">section</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="section-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">section</span>
+  <span class="ruby-ivar">@document</span>.<span class="ruby-identifier">section</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- section-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- section-method -->
+
+      
+        <div id="section_heads-method" class="method-detail ">
+          <a name="method-i-section_heads"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">section_heads</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Section TOCs</p>
+            
+
+            
+            <div class="method-source-code" id="section_heads-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">section_heads</span>
+  <span class="ruby-ivar">@document</span>.<span class="ruby-identifier">section_heads</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">id</span>, <span class="ruby-identifier">text</span><span class="ruby-operator">|</span>
+    {
+      <span class="ruby-value">:id</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">id</span>,
+      <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">text</span>
+    }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- section_heads-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- section_heads-method -->
+
+      
+        <div id="style_files-method" class="method-detail ">
+          <a name="method-i-style_files"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">style_files</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Array of expanded stylesheet file names. If a file cannot be found, the
+resulting array will include nil elements in positions corresponding to the
+stylesheets array.</p>
+            
+
+            
+            <div class="method-source-code" id="style_files-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 123</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">style_files</span>
+  <span class="ruby-identifier">styles</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">'/'</span>)
+    <span class="ruby-identifier">style_path</span>.
+      <span class="ruby-identifier">reject</span>  { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">strip</span>.<span class="ruby-identifier">empty?</span> }.
+      <span class="ruby-identifier">map</span>     { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">p</span>, <span class="ruby-node">&quot;#{name}.css&quot;</span>) }.
+      <span class="ruby-identifier">detect</span>  { <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">file</span>) }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- style_files-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- style_files-method -->
+
+      
+        <div id="styles-method" class="method-detail ">
+          <a name="method-i-styles"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">styles</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Array of style module names as given on the command line.</p>
+            
+
+            
+            <div class="method-source-code" id="styles-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">styles</span>
+  <span class="ruby-ivar">@document</span>.<span class="ruby-identifier">styles</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- styles-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- styles-method -->
+
+      
+        <div id="stylesheet-method" class="method-detail ">
+          <a name="method-i-stylesheet"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">stylesheet</span><span
+              class="method-args">(path, media='all')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="stylesheet-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 167</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stylesheet</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">media</span>=<span class="ruby-string">'all'</span>)
+  <span class="ruby-identifier">inline_stylesheet</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">media</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- stylesheet-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- stylesheet-method -->
+
+      
+        <div id="stylesheet_tags-method" class="method-detail ">
+          <a name="method-i-stylesheet_tags"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">stylesheet_tags</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>All embedded stylesheets.</p>
+            
+
+            
+            <div class="method-source-code" id="stylesheet_tags-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stylesheet_tags</span>
+  <span class="ruby-identifier">stylesheets</span>.
+    <span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">style</span><span class="ruby-operator">|</span> <span class="ruby-identifier">inline_stylesheet</span>(<span class="ruby-identifier">style</span>[<span class="ruby-value">:path</span>], <span class="ruby-identifier">style</span>[<span class="ruby-value">:media</span>]) }.
+    <span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n  &quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- stylesheet_tags-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- stylesheet_tags-method -->
+
+      
+        <div id="stylesheets-method" class="method-detail ">
+          <a name="method-i-stylesheets"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">stylesheets</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Array of stylesheet info hashes.</p>
+            
+
+            
+            <div class="method-source-code" id="stylesheets-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stylesheets</span>
+  <span class="ruby-identifier">styles</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">style_files</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">base</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">path</span>, <span class="ruby-string">'.css'</span>)
+    <span class="ruby-identifier">fail</span> <span class="ruby-node">&quot;style not found: #{style.inspect}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">nil?</span>
+    {
+      <span class="ruby-value">:name</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>,
+      <span class="ruby-value">:path</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">path</span>,
+      <span class="ruby-value">:base</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">path</span>, <span class="ruby-string">'.css'</span>),
+      <span class="ruby-value">:media</span> =<span class="ruby-operator">&gt;</span> (<span class="ruby-identifier">base</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/(print|screen)$/</span>) <span class="ruby-operator">?</span> <span class="ruby-node">$1</span> <span class="ruby-operator">:</span> <span class="ruby-string">'all'</span>
+    }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- stylesheets-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- stylesheets-method -->
+
+      
+        <div id="tagline-method" class="method-detail ">
+          <a name="method-i-tagline"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">tagline</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="tagline-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tagline</span>
+  <span class="ruby-ivar">@document</span>.<span class="ruby-identifier">tagline</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- tagline-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Template.html#method-i-tagline-3F">tagline?</a>
+          </div>
+          
+
+          
+        </div><!-- tagline-method -->
+
+      
+        <div id="tagline-3F-method" class="method-detail method-alias">
+          <a name="method-i-tagline-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">tagline?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Template.html#method-i-tagline">tagline</a>
+          </div>
+          
+        </div><!-- tagline-3F-method -->
+
+      
+        <div id="title-method" class="method-detail ">
+          <a name="method-i-title"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">title</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="title-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">title</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">name_and_section?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">tagline</span>
+    <span class="ruby-identifier">tagline</span>
+  <span class="ruby-keyword">else</span>
+    [<span class="ruby-identifier">page_name</span>, <span class="ruby-identifier">tagline</span>].<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">' - '</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- title-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- title-method -->
+
+      
+        <div id="wrap_class_name-method" class="method-detail ">
+          <a name="method-i-wrap_class_name"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">wrap_class_name</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="wrap_class_name-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/template.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">wrap_class_name</span>
+  <span class="ruby-string">'mp'</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- wrap_class_name-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- wrap_class_name-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

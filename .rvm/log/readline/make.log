@@ -1,0 +1,5 @@
+test -d shlib || mkdir shlib
+( cd shlib ; make  all )
+make[1]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/readline-5.2/shlib'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/readline-5.2/shlib'

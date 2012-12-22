@@ -1,0 +1,701 @@
+#!/usr/bin/env bash
+
+printenv_null()
+{
+  if printenv --null >/dev/null 2>/dev/null
+  then
+    printenv --null
+  else
+    # this messes with escape sequences but allows new lines in variables
+    printenv | sed '/=/ { s/=.*$//; p; }; d;' | while read name
+    do
+      zero="\0"
+      eval "eval \"printf '%b' '$name=\$$name$zero'\""
+    done
+  fi
+}
+
+#
+# RVM specific functions.
+#
+
+__rvm_warn_on_rubyopt()
+{
+  if [[ -n "${RUBYOPT:-""}" ]]; then
+    rvm_warn \
+      "Please note: You have the RUBYOPT environment variable set and this \
+            may interfere with normal rvm operations. We sugges unsetting it."
+    return 1
+  else
+    return 0
+  fi
+}
+
+__rvm_strings()
+{
+  typeset strings ruby_strings
+
+  ruby_strings=($(echo ${rvm_ruby_args:-$rvm_ruby_string}))
+
+  for rvm_ruby_string in "${ruby_strings[@]}" ; do
+    strings="$strings $(__rvm_select ; echo $rvm_ruby_string)"
+  done
+
+  echo $strings
+
+  return 0
+}
+
+# Return a list of directories under a given base path.
+# Derived from rvm_ruby_string.
+__rvm_ruby_string_paths_under()
+{
+  typeset __search_path part parts
+
+  __search_path="${1%/}" # Strip off any trailing slash
+
+  if [[ -n "${ZSH_VERSION:-}" ]]
+  then parts=(${=rvm_ruby_string//-/ })
+  else parts=(${rvm_ruby_string//-/ }) # Strip white space.
+  fi
+
+  echo "$__search_path"
+  for part in "${parts[@]}"
+  do
+    __search_path="$__search_path/$part"
+    echo "$__search_path"
+  done
+}
+
+# Run a specified command and log it.
+__rvm_run()
+{
+  typeset name message
+  typeset -a _command_array
+
+  name="${1:-}"
+  eval "_command_array=( ${2:-} )"
+  message="${3:-}"
+
+  __rvm_log_command "$name" "$message" "${_command_array[@]}" || return $?
+}
+
+# Run a specified command and log it.
+__rvm_log_command()
+{
+  typeset name message _log _command_start _command_name
+  typeset -a _command
+
+  name="${1:-}"
+  message="${2:-}"
+  [[ -z "$message" ]] || rvm_log "$message"
+  shift 2
+  _command=( "$@" )   # store full command so we can manipulate it
+  _command_start="$1" # store first part so we can detect variables
+  while (( $# )) && [[ "$1" =~ "=" ]] # skip variables from beginning
+  do shift
+  done
+  _command_name="$1"  # store the real command so we can detect functions
+
+  [[ ! "${_command_start}" =~ "=" ]] || _command=( "env" "${_command[@]}" )
+  (( ${rvm_niceness:-0} == 0 ))      || _command=( nice -n $rvm_niceness "${_command[@]}" )
+
+  _log="${rvm_log_path}${rvm_ruby_string:+/}${rvm_ruby_string:-}/$name.log"
+
+  [[ -d "${_log%\/*}" ]] || \mkdir -p "${_log%\/*}"
+  [[ -f "${_log}"     ]] || \rm -f "${_log}"
+  {
+    printf "%b" "[$(date +'%Y-%m-%d %H:%M:%S')] ${_command[*]}\n"
+    if is_a_function "${_command_name}"
+    then typeset -f  "${_command_name}"
+    fi
+    printf "%b" "current path: $PWD\n"
+    printf "%b" "command(${#_command[@]}): ${_command[*]}\n"
+  } | tee "${_log}" | rvm_debug_stream
+
+  "${_command[@]}" >>"${_log}" 2>&1 ||
+  {
+    typeset result=$?
+    rvm_error "Error running '${_command[*]}', please read ${_log}"
+    return ${result}
+  }
+}
+
+# Output the current ruby's rvm source path.
+__rvm_source_dir()
+{
+  if [[ ${rvm_ruby_selected_flag:-0} -eq 0 ]]
+  then __rvm_select
+  fi
+
+  if [[ -z "$rvm_ruby_src_path" ]]
+  then
+    rvm_error "No source directory exists for the default implementation."
+  else
+    echo "$rvm_ruby_src_path"
+  fi
+
+  return 0
+}
+
+# Output an inspection of selected 'binary' scripts, based on CLI selection.
+__rvm_inspect()
+{
+  for binary in $rvm_ruby_args
+  do
+    actual_file="$(unset -f gem ; builtin command -v gem )"
+    rvm_log "$actual_file:"
+    if [[ ${rvm_shebang_flag:-0} -eq 1 ]]
+    then
+      \head -n 1    < "$actual_file"
+    fi
+
+    if [[ ${rvm_env_flag:-0} -eq 1 ]]
+    then
+      \awk '/ENV/'  < "$actual_file"
+    fi
+
+    if [[ ${rvm_path_flag:-0} -eq 1 ]]
+    then
+      \awk '/PATH/' < "$actual_file"
+    fi
+
+    if [[ ${rvm_head_flag:-0} -eq 1 ]]
+    then
+      \head -n 5    < "$actual_file"
+    fi
+
+    if [[ ${rvm_tail_flag:-0} -eq 1 ]]
+    then
+      \tail -n 5    < "$actual_file"
+    fi
+
+    if [[ ${rvm_all_flag:-0} -eq 1 ]]
+    then
+      \cat $actual_file
+    fi
+  done
+
+  return 0
+}
+
+# Strip whitespace and normalize it all.
+__rvm_strip()
+{
+  \sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' -e 's/[[:space:]]\{1,\}/ /g'
+  return $?
+}
+
+# remove all entries from $PATH starting with $1
+__rvm_remove_from_path()
+{
+  export PATH
+  typeset _value
+
+  # remove multiple slashes https://github.com/wayneeseguin/rvm/issues/1364
+  PATH="${PATH//+(\/)//}"
+  _value="${1//+(\/)//}"
+
+  typeset -a _path
+  _path=()
+  __rvm_custom_separated_array _path : "${PATH}"
+  __rvm_remove_from_array _path "${_value}" "${_path[@]}"
+  __rvm_join_array PATH : _path
+}
+
+__rvm_add_to_path()
+{
+  export PATH
+
+  if (( $# != 2 )) || [[ -z "$2" ]]
+  then
+    rvm_error "__rvm_add_to_path requires two parameters"
+    return 1
+  fi
+
+  __rvm_remove_from_path "$2"
+  case "$1" in
+    prepend) PATH="$2:$PATH" ;;
+    append)  PATH="$PATH:$2" ;;
+    #*) anything else will just remove it from PATH - not adding back
+  esac
+
+  if
+    [[ -n "${rvm_user_path_prefix:-}" ]]
+  then
+    __rvm_remove_from_path "${rvm_user_path_prefix}"
+    PATH="${rvm_user_path_prefix}:$PATH"
+  fi
+  builtin hash -r
+}
+
+rvm_is_a_shell_function()
+{
+  typeset _message
+  if
+    (( ${rvm_is_not_a_shell_function:-0} )) &&
+    [[ "${1:-}" != "no_warning" ]]
+  then
+    if rvm_pretty_print stderr
+    then rvm_log "" # newline when error is shown to user
+    fi
+    if rvm_pretty_print stderr
+    then rvm_log "RVM is not a function, selecting rubies with '${rvm_error_clr:-}rvm use ...${rvm_notify_clr:-}' will not work." >&2
+    else rvm_error "RVM is not a function, selecting rubies with 'rvm use ...' will not work."
+    fi
+    rvm_warn '
+You need to change your terminal emulator preferences to allow login shell.
+Sometimes it is required to use `/bin/bash --login` as the command.
+Please visit https://rvm.io/integration/gnome-terminal/ for a example.
+'
+  fi
+  return ${rvm_is_not_a_shell_function:-0}
+}
+
+__rvm_detect_xcode_version()
+{
+  typeset version_file
+
+  for version_file in \
+    /Applications/Xcode.app/Contents/version.plist \
+    /Developer/Applications/Xcode.app/Contents/version.plist
+  do
+    if [[ -f $version_file ]]
+    then
+      if [[ -x /usr/libexec/PlistBuddy ]]
+      then
+        /usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" $version_file
+      else
+        sed -n '/<key>CFBundleShortVersionString<\/key>/{n; s/^.*>\(.*\)<.*$/\1/; p;}' < $version_file
+      fi
+      return 0
+    fi
+  done
+
+  if builtin command -v xcodebuild >/dev/null
+  then
+    xcodebuild -version | sed -n '/Xcode/ {s/Xcode //; p;}'
+  fi
+}
+
+__rvm_detect_xcode_version_is()
+{
+  [[ "$(__rvm_detect_xcode_version)" == "$1" ]] || return 1
+}
+
+__rvm_version_compare()
+{
+  typeset first
+  first="$( printf "%b" "$1\n$3\n" | LC_ALL=C sort -t. -k 1,1n -k 2,2n -k 3,3n -k 4,4n -k 5,5n | head -n1 )"
+  case "$2" in
+    (-eq|==|=)
+      [[ "$1" == "$3" ]] || return $?
+      ;;
+    (-gt|\>)
+      [[ "$1" != "$3" && "$first" == "$1" ]] || return $?
+      ;;
+    (-ge|\>=)
+      [[ "$1" == "$3" || "$first" == "$1" ]] || return $?
+      ;;
+    (-lt|\<)
+      [[ "$1" != "$3" && "$first" == "$2" ]] || return $?
+      ;;
+    (-le|\<=)
+      [[ "$1" == "$3" || "$first" == "$3" ]] || return $?
+      ;;
+    (*)
+      rvm_error "Unsupported operator '$2'."
+      return 1
+      ;;
+  esac
+  return 0
+}
+
+__rvm_pager_or_cat_v()
+{
+  eval "${PAGER:-cat -v} '$1'"
+}
+
+__rvm_ask_for()
+{
+  typeset response
+  rvm_warn "$1"
+  printf "%b" "(anything other than '$2' will cancel) > "
+  read response
+  [[ "$2" == "$response" ]] || return $?
+}
+
+# read lines from file / stdin(-)
+__rvm_read_lines()
+{
+  typeset IFS
+  # NEW LINE, BE CAREFUL
+  IFS="
+"
+  if [[ "${2:--}" == "-" ]]
+  then eval "$1=( \$( cat - ) )"
+  else eval "$1=( \$( cat \"\${2:--}\" ) )"
+  fi
+}
+
+# parse comma separated string into an array
+# Ex. __rvm_custom_separated_array strings - ruby_string
+# adds all elements from `ruby_string` to `strings` array
+__rvm_custom_separated_array()
+{
+  typeset IFS
+  IFS=$2
+  if [[ -n "${ZSH_VERSION:-}" ]]
+  then eval "$1+=( \${=3} )"
+  else eval "$1+=( \$3 )"
+  fi
+}
+
+__rvm_remove_from_array()
+{
+  typeset _array_name _search _iterator
+  typeset -a _temp_array
+  _array_name="$1"
+  _search="$2"
+  shift 2
+  _temp_array=()
+  for _iterator
+  do
+    __rvm_string_match "$_iterator" "$_search" || _temp_array+=( "$_iterator" )
+  done
+  eval "$_array_name=( \"\${_temp_array[@]}\" )"
+}
+
+__rvm_join_array()
+{
+  typeset IFS
+  IFS="$2"
+  eval "$1=\"\${$3[*]}\""
+}
+
+__rvm_find_first_file()
+{
+  typeset _first_file _variable_first_file __file_enum
+  _first_file=""
+  _variable_first_file="$1"
+  shift
+
+  for __file_enum in "$@"
+  do
+    if
+      [[ -f "$__file_enum" ]]
+    then
+      eval "$_variable_first_file=\"\$__file_enum\""
+      return 0
+    fi
+  done
+  eval "$_variable_first_file=\"\""
+  return 1
+}
+
+__rvm_detect_system()
+{
+  unset  _system_type _system_name _system_version _system_arch
+  export _system_type _system_name _system_version _system_arch
+  _system_type="unknown"
+  _system_name="unknown"
+  _system_version="unknown"
+  _system_arch="unknown"
+  case "$(uname)" in
+    (Linux)
+      #TODO: add support for arm??
+      _system_arch="$(uname -m | awk '{if($0~"^i[34567]86") print "i386"; else print;}')"
+      if
+        [[ -f /etc/lsb-release ]] &&
+        GREP_OPTIONS="" \grep "DISTRIB_ID=Ubuntu" /etc/lsb-release >/dev/null
+      then
+        _system_name="ubuntu"
+        _system_version="$(awk -F'=' '$1=="DISTRIB_RELEASE"{print $2}' /etc/lsb-release)"
+      elif
+        [[ -f /etc/os-release ]] &&
+        GREP_OPTIONS="" \grep "ID=opensuse" /etc/os-release >/dev/null
+      then
+        _system_name="opensuse"
+        _system_version="$(awk -F'=' '$1=="VERSION_ID"{gsub(/"/,"");print $2}' /etc/os-release)" #'
+      elif
+        [[ -f /etc/debian_version ]]
+      then
+        _system_name="debian"
+        _system_version="$(cat /etc/debian_version)"
+      elif
+        [[ -f /etc/centos-release ]]
+      then
+        _system_name="centos"
+        _system_version="$(grep -Eo '[[:digit:]\.]+' /etc/centos-release  | awk -F. '{print $1"."$2}')"
+      elif
+        [[ -f /etc/redhat-release ]]
+      then
+        if grep CentOS /etc/redhat-release >/dev/null
+        then _system_name="centos"
+        else _system_name="redhat"
+        fi
+        _system_version="$(grep -Eo '[[:digit:]\.]+' /etc/redhat-release  | awk -F. '{print $1"."$2}')"
+      elif
+        [[ -f /etc/gentoo-release ]]
+      then
+        _system_name="gentoo"
+        _system_version="base-$(cat /etc/gentoo-release | awk 'NR==1 {print $NF}' | awk -F. '{print $1"."$2}')"
+      elif
+        [[ -f /etc/arch-release ]]
+      then
+        _system_name="arch"
+        _system_version="libc-$(ldd --version  | awk 'NR==1 {print $NF}' | awk -F. '{print $1"."$2}')"
+      else
+        _system_version="libc-$(ldd --version  | awk 'NR==1 {print $NF}' | awk -F. '{print $1"."$2}')"
+      fi
+      ;;
+    (SunOS)
+      _system_type="sunos"
+      _system_version="$(uname -v)"
+      if
+        __rvm_string_match  "$(uname -v)" "+([[:digit:]]).+([[:digit:]])*"
+      then
+        _system_name="solaris"
+      elif
+        __rvm_string_match  "$(uname -v)" "oi*"
+      then
+        _system_name="openindiana"
+      else
+        return 3
+      fi
+      ;;
+    (Darwin)
+      _system_type="darwin"
+      _system_name="osx"
+      _system_version="$(sw_vers -productVersion)"
+      _system_version="${_system_version%.*}" # only major.minor - teeny is ignored
+      _system_arch="$(uname -m | awk '{if($0~"^i[34567]86") print "i386"; else print;}')"
+      ;;
+    (*)
+      return 1
+      ;;
+  esac
+  _system_type="${_system_type//[ \/]/_}"
+  _system_name="${_system_name//[ \/]/_}"
+  _system_version="${_system_version//[ \/]/_}"
+  _system_arch="${_system_arch//[ \/]/_}"
+}
+
+# params: [printf_if=-] [suffix]
+__rvm_system_path()
+{
+  rvm_remote_server_path="$(__rvm_db "rvm_remote_server_path${2:-}")"
+  [[ -n "${rvm_remote_server_path}" ]] ||
+  if __rvm_detect_system
+  then rvm_remote_server_path="${_system_name}/${_system_version}/${_system_arch}"
+  else return $?
+  fi
+  if [[ "${1:-}" == "-" ]]
+  then printf "%b" "${rvm_remote_server_path}"
+  fi
+}
+
+__rvm_remote_extension()
+{
+  case "$1" in
+    *.tar.*)
+      rvm_remote_extension="tar${1##*tar}"
+      ;;
+    jruby-*)
+      rvm_remote_extension="tar.gz"
+      ;;
+    *)
+      rvm_remote_extension="tar.bz2"
+      ;;
+  esac
+  [[ "$2" != "-" ]] || printf "%b" "${rvm_remote_extension}"
+}
+
+# params: ruby-string-to-transform
+__rvm_ruby_package_file()
+{
+  case "$1" in
+    *.tar.*)
+      rvm_ruby_package_file="/$1"
+      ;;
+    jruby-*)
+      typeset __version
+      __version="$(
+        rvm_ruby_string="$1"
+        __rvm_ruby_string
+        echo "$rvm_ruby_version"
+      )"
+      rvm_ruby_package_file="/${__version}/jruby-bin-${__version}.$(__rvm_remote_extension "$1" -)"
+      ;;
+    "")
+      rvm_ruby_package_file=""
+      ;;
+    *)
+      rvm_ruby_package_file="/$1.$(__rvm_remote_extension "$1" -)"
+      ;;
+  esac
+}
+
+__rvm_calculate_remote_file()
+{
+  rvm_remote_server_url="$( __rvm_db "rvm_remote_server_url${3:-}" )"
+  [[ -n "$rvm_remote_server_url" ]] || {
+    rvm_debug "rvm_remote_server_url${3:-} not found"
+    return $1
+  }
+  __rvm_system_path "" "${3:-}"
+  __rvm_ruby_package_file "${4:-}"
+  __remote_file="${rvm_remote_server_url}/${rvm_remote_server_path}${rvm_ruby_package_file}"
+}
+
+# params: return_on_end return_on_failed_link [suffix] [file]
+__rvm_remote_server_path_single()
+{
+  typeset __remote_file
+  __rvm_calculate_remote_file "$@" || return $?
+  if
+    [[ -z "${__remote_file:-}" ]]
+  then
+    rvm_debug "No remote file name found"
+    return $1
+  elif
+    file_exists_at_url "${__remote_file}"
+  then
+    rvm_debug "Found remote file ${__remote_file}"
+    printf "%b" "${__remote_file}"
+  else
+    rvm_debug "Remote file does not exist ${__remote_file}"
+    return $2
+  fi
+}
+
+# params: [file_name]
+__rvm_remote_server_path()
+{
+  typeset _iterator
+  _iterator=""
+  while ! __rvm_remote_server_path_single 0 1 "${_iterator}" "${1:-}"
+  do : $(( _iterator+=1 ))
+  done
+}
+
+__list_remote_rubies_for()
+{
+  typeset rvm_ruby_url
+  rvm_ruby_url="$1"
+  awk '/'"${rvm_ruby_url//\//\/}"'/{print}' < $rvm_path/config/remote
+  if [[ -f $rvm_user_path/remote ]]
+  then awk '/'"${rvm_ruby_url//\//\/}"'/{print}' < $rvm_user_path/remote
+  fi
+}
+
+rubygems_detect_ruby_lib_gem_path()
+{
+  ruby_lib_gem_path="$("${1:-ruby}" -rrbconfig -e "puts ::Kernel.const_get('RbConfig')::CONFIG['rubylibprefix']")/gems/"
+  case "$rvm_ruby_string" in
+    (jruby*)
+      ruby_lib_gem_path+="shared"
+      ;;
+    (*)
+      ruby_lib_gem_path+="$("${1:-ruby}" -rrbconfig -e "puts ::Kernel.const_get('RbConfig')::CONFIG['ruby_version']")"
+      ;;
+  esac
+}
+
+__rvm_rubygems_create_link()
+{
+  typeset ruby_lib_gem_path
+  rubygems_detect_ruby_lib_gem_path "${1:-ruby}"
+
+  # Add ruby's gem path to ruby's lib direcotry.
+  \mkdir -p "$(dirname $ruby_lib_gem_path)"
+
+  __rvm_rm_rf "$ruby_lib_gem_path"
+
+  if [[ -d "$rvm_ruby_gem_home" ]]
+  then ln -fs "$rvm_ruby_gem_home" "$ruby_lib_gem_path"
+  fi
+}
+
+# Import the initial gemsets, unless skipped.
+__rvm_gemsets_initial()
+{
+  if
+    (( ${rvm_skip_gemsets_flag:-0} == 0 ))
+  then
+    __rvm_run_with_env "gemsets.initial" "$rvm_ruby_string" \
+      "'$rvm_scripts_path/gemsets' initial" \
+      "$rvm_ruby_string - #importing default gemsets, this may take time ..."
+  else
+    mkdir -p "$rvm_gems_path/$rvm_ruby_string@global/bin"
+    rvm_log "Skipped importing default gemsets"
+  fi
+}
+
+file_exists_at_url()
+(
+  if
+    [[ -n "${1:-}" ]]
+  then
+    unset curl
+    \curl -slkL --max-time 3 --head "$1" 2>&1 |
+      GREP_OPTIONS="" \grep -E 'HTTP/[0-9\.]+ 200 OK' >/dev/null 2>&1 ||
+      return $?
+  else
+    rvm_log "Warning: URL was not passed to file_exists_at_url"
+    return 1
+  fi
+)
+
+__rvm_fix_group_permissions()
+{
+  if
+    umask -S | grep 'g=rw' >/dev/null
+  then
+    chmod -R g+rwX "$@"
+  fi
+}
+
+# params: action archive_file [path [path2]]
+__rvm_package()
+{
+  rvm_debug __rvm_package:$#: "$@"
+  case "$1-$2" in
+    list-*.zip)
+      unzip -Z -1 "$2"
+      ;;
+    extract-*.zip)
+      [[ -d "$3" ]] || mkdir -p "$3"
+      unzip -q -o "$2" -d "$3"
+      ;;
+    list-*.tar.bz2)
+      ${rvm_tar_command:-tar} tjf "$2"
+      ;;
+    create-*.tar.bz2)
+      if [[ -z "${4:-}" ]]
+      then ${rvm_tar_command:-tar} cjf "$2" "$3"
+      else ${rvm_tar_command:-tar} cjf "$2" -C "$3" "$4"
+      fi
+      ;;
+    extract-*.tar.bz2)
+      [[ -d "$3" ]] || mkdir -p "$3"
+      ${rvm_tar_command:-tar} xjf "$2" -C "$3" ${rvm_tar_options:-}
+      ;;
+    list-*.tar.gz|list-*.tgz)
+      ${rvm_tar_command:-tar} tzf "$2"
+      ;;
+    create-*.tar.gz|create-*.tgz)
+      if [[ -z "${4:-}" ]]
+      then ${rvm_tar_command:-tar} czf "$2" "$3"
+      else ${rvm_tar_command:-tar} czf "$2" -C "$3" "$4"
+      fi
+      ;;
+    extract-*.tar.gz|extract-*.tgz)
+      [[ -d "$3" ]] || mkdir -p "$3"
+      ${rvm_tar_command:-tar} xzf "$2" -C "$3" ${rvm_tar_options:-}
+      ;;
+    *)
+      return 199
+      ;;
+  esac
+}

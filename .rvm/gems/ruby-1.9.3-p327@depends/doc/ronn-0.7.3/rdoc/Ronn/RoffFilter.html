@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Class: Ronn::RoffFilter</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/ronn/roff_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/ronn/roff.rb">lib/ronn/roff.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-block_filter">#block_filter</a></li>
+          
+          <li><a href="#method-i-comment">#comment</a></li>
+          
+          <li><a href="#method-i-escape">#escape</a></li>
+          
+          <li><a href="#method-i-inline_filter">#inline_filter</a></li>
+          
+          <li><a href="#method-i-macro">#macro</a></li>
+          
+          <li><a href="#method-i-normalize_whitespace-21">#normalize_whitespace!</a></li>
+          
+          <li><a href="#method-i-previous">#previous</a></li>
+          
+          <li><a href="#method-i-quote">#quote</a></li>
+          
+          <li><a href="#method-i-remove_extraneous_elements-21">#remove_extraneous_elements!</a></li>
+          
+          <li><a href="#method-i-title_heading">#title_heading</a></li>
+          
+          <li><a href="#method-i-to_s">#to_s</a></li>
+          
+          <li><a href="#method-i-warn">#warn</a></li>
+          
+          <li><a href="#method-i-write">#write</a></li>
+          
+          <li><a href="#method-i-writeln">#writeln</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Included Modules -->
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li><a class="include" href="Utils.html">Ronn::Utils</a></li>
+        
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../AUTHORS.html">AUTHORS</a></li>
+        
+          <li class="file"><a href="../COPYING.html">COPYING</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../Ronn.html">Ronn</a></li>
+        
+          <li><a href="../Ronn/Document.html">Ronn::Document</a></li>
+        
+          <li><a href="../Ronn/Index.html">Ronn::Index</a></li>
+        
+          <li><a href="../Ronn/Reference.html">Ronn::Reference</a></li>
+        
+          <li><a href="../Ronn/RoffFilter.html">Ronn::RoffFilter</a></li>
+        
+          <li><a href="../Ronn/Server.html">Ronn::Server</a></li>
+        
+          <li><a href="../Ronn/Template.html">Ronn::Template</a></li>
+        
+          <li><a href="../Ronn/Utils.html">Ronn::Utils</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">Ronn::RoffFilter</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="HTML_ROFF_ENTITIES">HTML_ROFF_ENTITIES</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(html, name, section, tagline, manual=nil, version=nil, date=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Convert <a href="../Ronn.html">Ronn</a> HTML to roff.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/roff.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">html</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">section</span>, <span class="ruby-identifier">tagline</span>, <span class="ruby-identifier">manual</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">version</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">date</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@buf</span> = []
+  <span class="ruby-identifier">title_heading</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">section</span>, <span class="ruby-identifier">tagline</span>, <span class="ruby-identifier">manual</span>, <span class="ruby-identifier">version</span>, <span class="ruby-identifier">date</span>
+  <span class="ruby-identifier">doc</span> = <span class="ruby-constant">Hpricot</span>(<span class="ruby-identifier">html</span>)
+  <span class="ruby-identifier">remove_extraneous_elements!</span> <span class="ruby-identifier">doc</span>
+  <span class="ruby-identifier">normalize_whitespace!</span> <span class="ruby-identifier">doc</span>
+  <span class="ruby-identifier">block_filter</span> <span class="ruby-identifier">doc</span>
+  <span class="ruby-identifier">write</span> <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="to_s-method" class="method-detail ">
+          <a name="method-i-to_s"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_s</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="to_s-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/roff.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@buf</span>.<span class="ruby-identifier">join</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/[ \t]+$/</span>, <span class="ruby-string">''</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- to_s-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_s-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+      <div id="protected-instance-method-details" class="method-section section">
+        <h3 class="section-header">Protected Instance Methods</h3>
+
+      
+        <div id="block_filter-method" class="method-detail ">
+          <a name="method-i-block_filter"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">block_filter</span><span
+              class="method-args">(node)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="block_filter-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/roff.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">block_filter</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hpricot</span><span class="ruby-operator">::</span><span class="ruby-constant">Elements</span>)
+    <span class="ruby-identifier">node</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">ch</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block_filter</span>(<span class="ruby-identifier">ch</span>) }
+
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">doc?</span>
+    <span class="ruby-identifier">block_filter</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">text?</span>
+    <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;unexpected text: %p&quot;</span>,  <span class="ruby-identifier">node</span>
+
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">elem?</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'div'</span>
+      <span class="ruby-identifier">block_filter</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'h1'</span>
+      <span class="ruby-comment"># discard</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'h2'</span>
+      <span class="ruby-identifier">macro</span> <span class="ruby-string">&quot;SH&quot;</span>, <span class="ruby-identifier">quote</span>(<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">html</span>))
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'h3'</span>
+      <span class="ruby-identifier">macro</span> <span class="ruby-string">&quot;SS&quot;</span>, <span class="ruby-identifier">quote</span>(<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">html</span>))
+
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'p'</span>
+      <span class="ruby-identifier">prev</span> = <span class="ruby-identifier">previous</span>(<span class="ruby-identifier">node</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">prev</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-node">]dd li]</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">name</span>)
+        <span class="ruby-identifier">macro</span> <span class="ruby-string">&quot;IP&quot;</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">prev</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-node">]h1 h2 h3]</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">prev</span>.<span class="ruby-identifier">name</span>)
+        <span class="ruby-identifier">macro</span> <span class="ruby-string">&quot;P&quot;</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">inline_filter</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'pre'</span>
+      <span class="ruby-identifier">prev</span> = <span class="ruby-identifier">previous</span>(<span class="ruby-identifier">node</span>)
+      <span class="ruby-identifier">indent</span> = <span class="ruby-identifier">prev</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-node">]h1 h2 h3]</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">prev</span>.<span class="ruby-identifier">name</span>)
+      <span class="ruby-identifier">macro</span> <span class="ruby-string">&quot;IP&quot;</span>, <span class="ruby-node">]&quot;&quot; 4]</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">indent</span>
+      <span class="ruby-identifier">macro</span> <span class="ruby-string">&quot;nf&quot;</span>
+      <span class="ruby-identifier">write</span> <span class="ruby-string">&quot;\n&quot;</span>
+      <span class="ruby-identifier">inline_filter</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+      <span class="ruby-identifier">macro</span> <span class="ruby-string">&quot;fi&quot;</span>
+      <span class="ruby-identifier">macro</span> <span class="ruby-string">&quot;IP&quot;</span>, <span class="ruby-node">]&quot;&quot; 0]</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">indent</span>
+
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'dl'</span>
+      <span class="ruby-identifier">macro</span> <span class="ruby-string">&quot;TP&quot;</span>
+      <span class="ruby-identifier">block_filter</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'dt'</span>
+      <span class="ruby-identifier">prev</span> = <span class="ruby-identifier">previous</span>(<span class="ruby-identifier">node</span>)
+      <span class="ruby-identifier">macro</span> <span class="ruby-string">&quot;TP&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">prev</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">inline_filter</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+      <span class="ruby-identifier">write</span> <span class="ruby-string">&quot;\n&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'dd'</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">at</span>(<span class="ruby-string">'p'</span>)
+        <span class="ruby-identifier">block_filter</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">inline_filter</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">write</span> <span class="ruby-string">&quot;\n&quot;</span>
+
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'ol'</span>, <span class="ruby-string">'ul'</span>
+      <span class="ruby-identifier">block_filter</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+      <span class="ruby-identifier">macro</span> <span class="ruby-string">&quot;IP&quot;</span>, <span class="ruby-node">]&quot;&quot; 0]</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'li'</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">name</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-string">'ol'</span>
+        <span class="ruby-identifier">macro</span> <span class="ruby-string">&quot;IP&quot;</span>, <span class="ruby-node">]&quot;#{node.position + 1}.&quot; 4]</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-string">'ul'</span>
+        <span class="ruby-identifier">macro</span> <span class="ruby-string">&quot;IP&quot;</span>, <span class="ruby-node">]&quot;\(bu&quot; 4]</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">at</span>(<span class="ruby-string">'p|ol|ul|dl|div'</span>)
+        <span class="ruby-identifier">block_filter</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">inline_filter</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">write</span> <span class="ruby-string">&quot;\n&quot;</span>
+
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;unrecognized block tag: %p&quot;</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">fail</span> <span class="ruby-node">&quot;unexpected node: #{node.inspect}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- block_filter-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- block_filter-method -->
+
+      
+        <div id="comment-method" class="method-detail ">
+          <a name="method-i-comment"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">comment</span><span
+              class="method-args">(text)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="comment-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/roff.rb, line 276</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">comment</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-identifier">writeln</span> <span class="ruby-node">%[.\\&quot; #{text}]</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- comment-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- comment-method -->
+
+      
+        <div id="escape-method" class="method-detail ">
+          <a name="method-i-escape"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">escape</span><span
+              class="method-args">(text)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="escape-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/roff.rb, line 241</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">escape</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">ent</span> = <span class="ruby-constant">HTML_ROFF_ENTITIES</span>
+  <span class="ruby-identifier">text</span> = <span class="ruby-identifier">text</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">/&amp;#x([0-9A-Fa-f]+);/</span>) { <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>(<span class="ruby-value">16</span>).<span class="ruby-identifier">chr</span> }  <span class="ruby-comment"># hex entities</span>
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">/&amp;#(\d+);/</span>) { <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>.<span class="ruby-identifier">chr</span> }                <span class="ruby-comment"># dec entities</span>
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-string">'\'</span>, <span class="ruby-string">'\e'</span>)                                <span class="ruby-comment"># backslash</span>
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/['.-]/</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;\\#{m}&quot;</span> }                  <span class="ruby-comment"># control chars</span>
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/(&amp;[A-Za-z]+;)/</span>) { <span class="ruby-identifier">ent</span>[<span class="ruby-node">$1</span>] <span class="ruby-operator">||</span> <span class="ruby-node">$1</span> }         <span class="ruby-comment"># named entities</span>
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-string">'&amp;amp;'</span>,  <span class="ruby-string">'&amp;'</span>)                             <span class="ruby-comment"># amps</span>
+  <span class="ruby-identifier">text</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- escape-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- escape-method -->
+
+      
+        <div id="inline_filter-method" class="method-detail ">
+          <a name="method-i-inline_filter"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">inline_filter</span><span
+              class="method-args">(node)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="inline_filter-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/roff.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inline_filter</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">node</span> <span class="ruby-comment"># is an empty node</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hpricot</span><span class="ruby-operator">::</span><span class="ruby-constant">Elements</span>)
+    <span class="ruby-identifier">node</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">ch</span><span class="ruby-operator">|</span> <span class="ruby-identifier">inline_filter</span>(<span class="ruby-identifier">ch</span>) }
+
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">text?</span>
+    <span class="ruby-identifier">text</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">to_html</span>.<span class="ruby-identifier">dup</span>
+    <span class="ruby-identifier">write</span> <span class="ruby-identifier">escape</span>(<span class="ruby-identifier">text</span>)
+
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">elem?</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'span'</span>
+      <span class="ruby-identifier">inline_filter</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'code'</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">child_of?</span>(<span class="ruby-identifier">node</span>, <span class="ruby-string">'pre'</span>)
+        <span class="ruby-identifier">inline_filter</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">write</span> <span class="ruby-string">'\fB'</span>
+        <span class="ruby-identifier">inline_filter</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+        <span class="ruby-identifier">write</span> <span class="ruby-string">'\fR'</span>
+      <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'b'</span>, <span class="ruby-string">'strong'</span>, <span class="ruby-string">'kbd'</span>, <span class="ruby-string">'samp'</span>
+      <span class="ruby-identifier">write</span> <span class="ruby-string">'\fB'</span>
+      <span class="ruby-identifier">inline_filter</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+      <span class="ruby-identifier">write</span> <span class="ruby-string">'\fR'</span>
+
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'var'</span>, <span class="ruby-string">'em'</span>, <span class="ruby-string">'i'</span>, <span class="ruby-string">'u'</span>
+      <span class="ruby-identifier">write</span> <span class="ruby-string">'\fI'</span>
+      <span class="ruby-identifier">inline_filter</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+      <span class="ruby-identifier">write</span> <span class="ruby-string">'\fR'</span>
+
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'br'</span>
+      <span class="ruby-identifier">macro</span> <span class="ruby-string">'br'</span>
+
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'a'</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">classes</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">'man-ref'</span>)
+        <span class="ruby-identifier">inline_filter</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">has_attribute?</span>(<span class="ruby-string">'data-bare-link'</span>)
+        <span class="ruby-identifier">write</span> <span class="ruby-string">'\fI'</span>
+        <span class="ruby-identifier">inline_filter</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+        <span class="ruby-identifier">write</span> <span class="ruby-string">'\fR'</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">inline_filter</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>)
+        <span class="ruby-identifier">write</span> <span class="ruby-string">' '</span>
+        <span class="ruby-identifier">write</span> <span class="ruby-string">'\fI'</span>
+        <span class="ruby-identifier">write</span> <span class="ruby-identifier">escape</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">attributes</span>[<span class="ruby-string">'href'</span>])
+        <span class="ruby-identifier">write</span> <span class="ruby-string">'\fR'</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;unrecognized inline tag: %p&quot;</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">fail</span> <span class="ruby-node">&quot;unexpected node: #{node.inspect}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- inline_filter-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- inline_filter-method -->
+
+      
+        <div id="macro-method" class="method-detail ">
+          <a name="method-i-macro"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">macro</span><span
+              class="method-args">(name, value=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="macro-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/roff.rb, line 221</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">macro</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">writeln</span> <span class="ruby-node">&quot;.\n.#{[name, value].compact.join(' ')}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- macro-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- macro-method -->
+
+      
+        <div id="normalize_whitespace-21-method" class="method-detail ">
+          <a name="method-i-normalize_whitespace-21"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">normalize_whitespace!</span><span
+              class="method-args">(node)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="normalize_whitespace-21-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/roff.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">normalize_whitespace!</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-keyword">case</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hpricot</span><span class="ruby-operator">::</span><span class="ruby-constant">Elements</span>)
+    <span class="ruby-identifier">node</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">ch</span><span class="ruby-operator">|</span> <span class="ruby-identifier">normalize_whitespace!</span> <span class="ruby-identifier">ch</span> }
+  <span class="ruby-keyword">when</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">text?</span>
+    <span class="ruby-identifier">preceding</span>, <span class="ruby-identifier">following</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">previous</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">next</span>
+    <span class="ruby-identifier">content</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">content</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/[\n ]+/</span>, <span class="ruby-string">' '</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">preceding</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">block_element?</span>(<span class="ruby-identifier">preceding</span>.<span class="ruby-identifier">name</span>) <span class="ruby-operator">||</span>
+       <span class="ruby-identifier">preceding</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">'br'</span>
+      <span class="ruby-identifier">content</span>.<span class="ruby-identifier">lstrip!</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">following</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">block_element?</span>(<span class="ruby-identifier">following</span>.<span class="ruby-identifier">name</span>) <span class="ruby-operator">||</span>
+       <span class="ruby-identifier">following</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">'br'</span>
+      <span class="ruby-identifier">content</span>.<span class="ruby-identifier">rstrip!</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">content</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">node</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">node</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">node</span>.<span class="ruby-identifier">content</span> = <span class="ruby-identifier">content</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">elem?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">'pre'</span>
+    <span class="ruby-comment"># stop traversing</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">elem?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>
+    <span class="ruby-identifier">normalize_whitespace!</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">elem?</span>
+    <span class="ruby-comment"># element has no children</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">doc?</span>
+    <span class="ruby-identifier">normalize_whitespace!</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;unexpected node during whitespace normalization: %p&quot;</span>, <span class="ruby-identifier">node</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- normalize_whitespace-21-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- normalize_whitespace-21-method -->
+
+      
+        <div id="previous-method" class="method-detail ">
+          <a name="method-i-previous"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">previous</span><span
+              class="method-args">(node)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="previous-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/roff.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">previous</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:previous</span>)
+    <span class="ruby-identifier">prev</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">previous</span>
+    <span class="ruby-identifier">prev</span> = <span class="ruby-identifier">prev</span>.<span class="ruby-identifier">previous</span> <span class="ruby-keyword">until</span> <span class="ruby-identifier">prev</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">prev</span>.<span class="ruby-identifier">elem?</span>
+    <span class="ruby-identifier">prev</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- previous-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- previous-method -->
+
+      
+        <div id="quote-method" class="method-detail ">
+          <a name="method-i-quote"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">quote</span><span
+              class="method-args">(text)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="quote-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/roff.rb, line 254</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">quote</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-node">&quot;\&quot;#{text.gsub(/&quot;/, '\\&quot;')}\&quot;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- quote-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- quote-method -->
+
+      
+        <div id="remove_extraneous_elements-21-method" class="method-detail ">
+          <a name="method-i-remove_extraneous_elements-21"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">remove_extraneous_elements!</span><span
+              class="method-args">(doc)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="remove_extraneous_elements-21-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/roff.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_extraneous_elements!</span>(<span class="ruby-identifier">doc</span>)
+  <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">traverse_all_element</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">comment?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">procins?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">doctype?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">xmldecl?</span>
+      <span class="ruby-identifier">node</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">node</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- remove_extraneous_elements-21-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- remove_extraneous_elements-21-method -->
+
+      
+        <div id="title_heading-method" class="method-detail ">
+          <a name="method-i-title_heading"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">title_heading</span><span
+              class="method-args">(name, section, tagline, manual, version, date)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="title_heading-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/roff.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">title_heading</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">section</span>, <span class="ruby-identifier">tagline</span>, <span class="ruby-identifier">manual</span>, <span class="ruby-identifier">version</span>, <span class="ruby-identifier">date</span>)
+  <span class="ruby-identifier">comment</span> <span class="ruby-node">&quot;generated with Ronn/v#{Ronn.version}&quot;</span>
+  <span class="ruby-identifier">comment</span> <span class="ruby-node">&quot;http://github.com/rtomayko/ronn/tree/#{Ronn.revision}&quot;</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">macro</span> <span class="ruby-string">&quot;TH&quot;</span>, <span class="ruby-node">%[&quot;#{escape(name.upcase)}&quot; &quot;#{section}&quot; &quot;#{date.strftime('%B %Y')}&quot; &quot;#{version}&quot; &quot;#{manual}&quot;]</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- title_heading-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- title_heading-method -->
+
+      
+        <div id="warn-method" class="method-detail ">
+          <a name="method-i-warn"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">warn</span><span
+              class="method-args">(text, *args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="warn-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/roff.rb, line 280</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">warn</span>(<span class="ruby-identifier">text</span>, *<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;warn: #{text}&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">args</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- warn-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- warn-method -->
+
+      
+        <div id="write-method" class="method-detail ">
+          <a name="method-i-write"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">write</span><span
+              class="method-args">(text)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>write text to output buffer</p>
+            
+
+            
+            <div class="method-source-code" id="write-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/roff.rb, line 259</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">write</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-comment"># lines cannot start with a '.'. insert zero-width character before.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">text</span>[<span class="ruby-value">0</span>,<span class="ruby-value">2</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'\.'</span> <span class="ruby-operator">&amp;&amp;</span>
+    (<span class="ruby-ivar">@buf</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@buf</span>.<span class="ruby-identifier">last</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">==</span> <span class="ruby-value">\n\</span>)
+    <span class="ruby-ivar">@buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'\&amp;'</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">text</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- write-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- write-method -->
+
+      
+        <div id="writeln-method" class="method-detail ">
+          <a name="method-i-writeln"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">writeln</span><span
+              class="method-args">(text)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>write text to output buffer on a new line.</p>
+            
+
+            
+            <div class="method-source-code" id="writeln-source">
+<pre>
+<span class="ruby-comment"># File lib/ronn/roff.rb, line 270</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">writeln</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-identifier">write</span> <span class="ruby-string">&quot;\n&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@buf</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@buf</span>.<span class="ruby-identifier">last</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">!=</span> <span class="ruby-value">\n\</span>
+  <span class="ruby-identifier">write</span> <span class="ruby-identifier">text</span>
+  <span class="ruby-identifier">write</span> <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- writeln-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- writeln-method -->
+
+      
+      </div><!-- protected-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

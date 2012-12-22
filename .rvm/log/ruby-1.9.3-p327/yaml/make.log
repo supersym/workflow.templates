@@ -1,0 +1,101 @@
+(CDPATH="${ZSH_VERSION+.}:" && cd . && /bin/sh /data/solo/ace/users/s/supersym/.rvm/src/yaml-0.1.4/config/missing --run autoheader)
+rm -f stamp-h1
+touch config.h.in
+cd . && /bin/sh ./config.status config.h
+config.status: creating config.h
+config.status: config.h is unchanged
+make  all-recursive
+make[1]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/yaml-0.1.4'
+Making all in include
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/yaml-0.1.4/include'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/yaml-0.1.4/include'
+Making all in src
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/yaml-0.1.4/src'
+/bin/sh ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT api.lo -MD -MP -MF .deps/api.Tpo -c -o api.lo api.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT api.lo -MD -MP -MF .deps/api.Tpo -c api.c  -fPIC -DPIC -o .libs/api.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT api.lo -MD -MP -MF .deps/api.Tpo -c api.c -o api.o >/dev/null 2>&1
+mv -f .deps/api.Tpo .deps/api.Plo
+/bin/sh ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT reader.lo -MD -MP -MF .deps/reader.Tpo -c -o reader.lo reader.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT reader.lo -MD -MP -MF .deps/reader.Tpo -c reader.c  -fPIC -DPIC -o .libs/reader.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT reader.lo -MD -MP -MF .deps/reader.Tpo -c reader.c -o reader.o >/dev/null 2>&1
+mv -f .deps/reader.Tpo .deps/reader.Plo
+/bin/sh ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT scanner.lo -MD -MP -MF .deps/scanner.Tpo -c -o scanner.lo scanner.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT scanner.lo -MD -MP -MF .deps/scanner.Tpo -c scanner.c  -fPIC -DPIC -o .libs/scanner.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT scanner.lo -MD -MP -MF .deps/scanner.Tpo -c scanner.c -o scanner.o >/dev/null 2>&1
+mv -f .deps/scanner.Tpo .deps/scanner.Plo
+/bin/sh ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT parser.lo -MD -MP -MF .deps/parser.Tpo -c -o parser.lo parser.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT parser.lo -MD -MP -MF .deps/parser.Tpo -c parser.c  -fPIC -DPIC -o .libs/parser.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT parser.lo -MD -MP -MF .deps/parser.Tpo -c parser.c -o parser.o >/dev/null 2>&1
+mv -f .deps/parser.Tpo .deps/parser.Plo
+/bin/sh ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT loader.lo -MD -MP -MF .deps/loader.Tpo -c -o loader.lo loader.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT loader.lo -MD -MP -MF .deps/loader.Tpo -c loader.c  -fPIC -DPIC -o .libs/loader.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT loader.lo -MD -MP -MF .deps/loader.Tpo -c loader.c -o loader.o >/dev/null 2>&1
+mv -f .deps/loader.Tpo .deps/loader.Plo
+/bin/sh ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT writer.lo -MD -MP -MF .deps/writer.Tpo -c -o writer.lo writer.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT writer.lo -MD -MP -MF .deps/writer.Tpo -c writer.c  -fPIC -DPIC -o .libs/writer.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT writer.lo -MD -MP -MF .deps/writer.Tpo -c writer.c -o writer.o >/dev/null 2>&1
+mv -f .deps/writer.Tpo .deps/writer.Plo
+/bin/sh ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT emitter.lo -MD -MP -MF .deps/emitter.Tpo -c -o emitter.lo emitter.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT emitter.lo -MD -MP -MF .deps/emitter.Tpo -c emitter.c  -fPIC -DPIC -o .libs/emitter.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT emitter.lo -MD -MP -MF .deps/emitter.Tpo -c emitter.c -o emitter.o >/dev/null 2>&1
+mv -f .deps/emitter.Tpo .deps/emitter.Plo
+/bin/sh ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT dumper.lo -MD -MP -MF .deps/dumper.Tpo -c -o dumper.lo dumper.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT dumper.lo -MD -MP -MF .deps/dumper.Tpo -c dumper.c  -fPIC -DPIC -o .libs/dumper.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT dumper.lo -MD -MP -MF .deps/dumper.Tpo -c dumper.c -o dumper.o >/dev/null 2>&1
+mv -f .deps/dumper.Tpo .deps/dumper.Plo
+/bin/sh ../libtool --tag=CC   --mode=link gcc  -g -O2 -release 0 -version-info 2:2:0  -o libyaml.la -rpath /data/solo/ace/users/s/supersym/.rvm/usr/lib api.lo reader.lo scanner.lo parser.lo loader.lo writer.lo emitter.lo dumper.lo  
+libtool: link: gcc -shared  -fPIC -DPIC  .libs/api.o .libs/reader.o .libs/scanner.o .libs/parser.o .libs/loader.o .libs/writer.o .libs/emitter.o .libs/dumper.o    -O2   -Wl,-soname -Wl,libyaml-0.so.2 -o .libs/libyaml-0.so.2.0.2
+libtool: link: (cd ".libs" && rm -f "libyaml-0.so.2" && ln -s "libyaml-0.so.2.0.2" "libyaml-0.so.2")
+libtool: link: (cd ".libs" && rm -f "libyaml.so" && ln -s "libyaml-0.so.2.0.2" "libyaml.so")
+libtool: link: ar cru .libs/libyaml.a  api.o reader.o scanner.o parser.o loader.o writer.o emitter.o dumper.o
+libtool: link: ranlib .libs/libyaml.a
+libtool: link: ( cd ".libs" && rm -f "libyaml.la" && ln -s "../libyaml.la" "libyaml.la" )
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/yaml-0.1.4/src'
+Making all in .
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/yaml-0.1.4'
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/yaml-0.1.4'
+Making all in tests
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/yaml-0.1.4/tests'
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT run-scanner.o -MD -MP -MF .deps/run-scanner.Tpo -c -o run-scanner.o run-scanner.c
+mv -f .deps/run-scanner.Tpo .deps/run-scanner.Po
+/bin/sh ../libtool --tag=CC   --mode=link gcc  -g -O2   -o run-scanner run-scanner.o ../src/libyaml.la 
+libtool: link: gcc -g -O2 -o .libs/run-scanner run-scanner.o  ../src/.libs/libyaml.so -Wl,-rpath -Wl,/data/solo/ace/users/s/supersym/.rvm/usr/lib
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT run-parser.o -MD -MP -MF .deps/run-parser.Tpo -c -o run-parser.o run-parser.c
+mv -f .deps/run-parser.Tpo .deps/run-parser.Po
+/bin/sh ../libtool --tag=CC   --mode=link gcc  -g -O2   -o run-parser run-parser.o ../src/libyaml.la 
+libtool: link: gcc -g -O2 -o .libs/run-parser run-parser.o  ../src/.libs/libyaml.so -Wl,-rpath -Wl,/data/solo/ace/users/s/supersym/.rvm/usr/lib
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT run-loader.o -MD -MP -MF .deps/run-loader.Tpo -c -o run-loader.o run-loader.c
+mv -f .deps/run-loader.Tpo .deps/run-loader.Po
+/bin/sh ../libtool --tag=CC   --mode=link gcc  -g -O2   -o run-loader run-loader.o ../src/libyaml.la 
+libtool: link: gcc -g -O2 -o .libs/run-loader run-loader.o  ../src/.libs/libyaml.so -Wl,-rpath -Wl,/data/solo/ace/users/s/supersym/.rvm/usr/lib
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT run-emitter.o -MD -MP -MF .deps/run-emitter.Tpo -c -o run-emitter.o run-emitter.c
+mv -f .deps/run-emitter.Tpo .deps/run-emitter.Po
+/bin/sh ../libtool --tag=CC   --mode=link gcc  -g -O2   -o run-emitter run-emitter.o ../src/libyaml.la 
+libtool: link: gcc -g -O2 -o .libs/run-emitter run-emitter.o  ../src/.libs/libyaml.so -Wl,-rpath -Wl,/data/solo/ace/users/s/supersym/.rvm/usr/lib
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT run-dumper.o -MD -MP -MF .deps/run-dumper.Tpo -c -o run-dumper.o run-dumper.c
+mv -f .deps/run-dumper.Tpo .deps/run-dumper.Po
+/bin/sh ../libtool --tag=CC   --mode=link gcc  -g -O2   -o run-dumper run-dumper.o ../src/libyaml.la 
+libtool: link: gcc -g -O2 -o .libs/run-dumper run-dumper.o  ../src/.libs/libyaml.so -Wl,-rpath -Wl,/data/solo/ace/users/s/supersym/.rvm/usr/lib
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT example-reformatter.o -MD -MP -MF .deps/example-reformatter.Tpo -c -o example-reformatter.o example-reformatter.c
+mv -f .deps/example-reformatter.Tpo .deps/example-reformatter.Po
+/bin/sh ../libtool --tag=CC   --mode=link gcc  -g -O2   -o example-reformatter example-reformatter.o ../src/libyaml.la 
+libtool: link: gcc -g -O2 -o .libs/example-reformatter example-reformatter.o  ../src/.libs/libyaml.so -Wl,-rpath -Wl,/data/solo/ace/users/s/supersym/.rvm/usr/lib
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT example-reformatter-alt.o -MD -MP -MF .deps/example-reformatter-alt.Tpo -c -o example-reformatter-alt.o example-reformatter-alt.c
+mv -f .deps/example-reformatter-alt.Tpo .deps/example-reformatter-alt.Po
+/bin/sh ../libtool --tag=CC   --mode=link gcc  -g -O2   -o example-reformatter-alt example-reformatter-alt.o ../src/libyaml.la 
+libtool: link: gcc -g -O2 -o .libs/example-reformatter-alt example-reformatter-alt.o  ../src/.libs/libyaml.so -Wl,-rpath -Wl,/data/solo/ace/users/s/supersym/.rvm/usr/lib
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT example-deconstructor.o -MD -MP -MF .deps/example-deconstructor.Tpo -c -o example-deconstructor.o example-deconstructor.c
+mv -f .deps/example-deconstructor.Tpo .deps/example-deconstructor.Po
+/bin/sh ../libtool --tag=CC   --mode=link gcc  -g -O2   -o example-deconstructor example-deconstructor.o ../src/libyaml.la 
+libtool: link: gcc -g -O2 -o .libs/example-deconstructor example-deconstructor.o  ../src/.libs/libyaml.so -Wl,-rpath -Wl,/data/solo/ace/users/s/supersym/.rvm/usr/lib
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT example-deconstructor-alt.o -MD -MP -MF .deps/example-deconstructor-alt.Tpo -c -o example-deconstructor-alt.o example-deconstructor-alt.c
+mv -f .deps/example-deconstructor-alt.Tpo .deps/example-deconstructor-alt.Po
+/bin/sh ../libtool --tag=CC   --mode=link gcc  -g -O2   -o example-deconstructor-alt example-deconstructor-alt.o ../src/libyaml.la 
+libtool: link: gcc -g -O2 -o .libs/example-deconstructor-alt example-deconstructor-alt.o  ../src/.libs/libyaml.so -Wl,-rpath -Wl,/data/solo/ace/users/s/supersym/.rvm/usr/lib
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/yaml-0.1.4/tests'
+Making all in win32
+make[2]: Entering directory `/data/solo/ace/users/s/supersym/.rvm/src/yaml-0.1.4/win32'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/yaml-0.1.4/win32'
+make[1]: Leaving directory `/data/solo/ace/users/s/supersym/.rvm/src/yaml-0.1.4'

@@ -1,4 +1,4 @@
-workflow.templates
-==================
+configure.vim
+=============
 
-All sorts of (file) templates and boilerplates I need for work.
+The best editor in the whole damn world... and my dotfiles, plugins etc. etc.

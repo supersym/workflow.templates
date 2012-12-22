@@ -1,0 +1,39 @@
+
+[user]
+    email = maildumpert@gmail.com
+    name = supersymmetry
+
+[push]
+    default = simple
+
+[color]
+   ui = true
+   status = auto
+   branch = auto
+
+[alias]
+   st = status
+   ci = commit
+   br = branch
+   co = checkout
+   df = diff
+   wc = whatchanged
+   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%
+   up = "!sh -c 'clear; git add . && git commit -am \"lazy updates\"' "
+   pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
+
+[merge]
+	tool = meld
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 1357x773+1314+57
+	history-view-vpane-position = 288
+	file-view-vpane-position = 601
+	main-window-view = HistoryView
+[cola]
+	fontdiff = Source Code Pro,9,-1,5,50,0,0,0,0,0
+[gui]
+	editor = subl
+	historybrowser = gitk
+[diff]
+	tool = xxdiff

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"no_links:EFI"RDiscount#no_links;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"MDo not process <tt>[]</tt> and remove <tt><a></tt> tags from the output.;T:
+@file0FI"lib/rdiscount.rb;T

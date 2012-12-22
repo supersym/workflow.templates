@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [[ -s "/data/solo/ace/users/s/supersym/.rvm/environments/ruby-1.9.3-p327" ]]
+then
+  source "/data/solo/ace/users/s/supersym/.rvm/environments/ruby-1.9.3-p327"
+  exec erb "$@"
+else
+  echo "ERROR: Missing RVM environment file: '/data/solo/ace/users/s/supersym/.rvm/environments/ruby-1.9.3-p327'" >&2
+  exit 1
+fi

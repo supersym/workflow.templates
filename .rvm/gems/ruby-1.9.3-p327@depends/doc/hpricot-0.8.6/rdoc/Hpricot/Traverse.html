@@ -1,0 +1,2002 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Module: Hpricot::Traverse</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/hpricot/modules_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/hpricot/modules.rb">lib/hpricot/modules.rb</a></li>
+          
+            <li><a href="../lib/hpricot/traverse_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/hpricot/traverse.rb">lib/hpricot/traverse.rb</a></li>
+          
+            <li><a href="../lib/hpricot/elements_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/hpricot/elements.rb">lib/hpricot/elements.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-filter">::filter</a></li>
+          
+          <li><a href="#method-i-25">#%</a></li>
+          
+          <li><a href="#method-i-2F">#/</a></li>
+          
+          <li><a href="#method-i-after">#after</a></li>
+          
+          <li><a href="#method-i-at">#at</a></li>
+          
+          <li><a href="#method-i-before">#before</a></li>
+          
+          <li><a href="#method-i-bogusetag-3F">#bogusetag?</a></li>
+          
+          <li><a href="#method-i-children_of_type">#children_of_type</a></li>
+          
+          <li><a href="#method-i-clean_path">#clean_path</a></li>
+          
+          <li><a href="#method-i-comment-3F">#comment?</a></li>
+          
+          <li><a href="#method-i-css_path">#css_path</a></li>
+          
+          <li><a href="#method-i-doc-3F">#doc?</a></li>
+          
+          <li><a href="#method-i-doctype-3F">#doctype?</a></li>
+          
+          <li><a href="#method-i-elem-3F">#elem?</a></li>
+          
+          <li><a href="#method-i-following">#following</a></li>
+          
+          <li><a href="#method-i-get_subnode">#get_subnode</a></li>
+          
+          <li><a href="#method-i-html">#html</a></li>
+          
+          <li><a href="#method-i-index">#index</a></li>
+          
+          <li><a href="#method-i-innerHTML">#innerHTML</a></li>
+          
+          <li><a href="#method-i-innerHTML-3D">#innerHTML=</a></li>
+          
+          <li><a href="#method-i-innerText">#innerText</a></li>
+          
+          <li><a href="#method-i-inner_html">#inner_html</a></li>
+          
+          <li><a href="#method-i-inner_html-3D">#inner_html=</a></li>
+          
+          <li><a href="#method-i-inner_text">#inner_text</a></li>
+          
+          <li><a href="#method-i-make">#make</a></li>
+          
+          <li><a href="#method-i-next">#next</a></li>
+          
+          <li><a href="#method-i-next_node">#next_node</a></li>
+          
+          <li><a href="#method-i-node_position">#node_position</a></li>
+          
+          <li><a href="#method-i-nodes_at">#nodes_at</a></li>
+          
+          <li><a href="#method-i-position">#position</a></li>
+          
+          <li><a href="#method-i-preceding">#preceding</a></li>
+          
+          <li><a href="#method-i-previous">#previous</a></li>
+          
+          <li><a href="#method-i-previous_node">#previous_node</a></li>
+          
+          <li><a href="#method-i-procins-3F">#procins?</a></li>
+          
+          <li><a href="#method-i-search">#search</a></li>
+          
+          <li><a href="#method-i-swap">#swap</a></li>
+          
+          <li><a href="#method-i-text-3F">#text?</a></li>
+          
+          <li><a href="#method-i-to_html">#to_html</a></li>
+          
+          <li><a href="#method-i-to_original_html">#to_original_html</a></li>
+          
+          <li><a href="#method-i-to_plain_text">#to_plain_text</a></li>
+          
+          <li><a href="#method-i-to_s">#to_s</a></li>
+          
+          <li><a href="#method-i-traverse_element">#traverse_element</a></li>
+          
+          <li><a href="#method-i-traverse_text">#traverse_text</a></li>
+          
+          <li><a href="#method-i-xmldecl-3F">#xmldecl?</a></li>
+          
+          <li><a href="#method-i-xpath">#xpath</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../CHANGELOG.html">CHANGELOG</a></li>
+        
+          <li class="file"><a href="../COPYING.html">COPYING</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../Hpricot.html">Hpricot</a></li>
+        
+          <li><a href="../Hpricot/BlankSlate.html">Hpricot::BlankSlate</a></li>
+        
+          <li><a href="../Hpricot/BogusETag/Trav.html">Hpricot::BogusETag::Trav</a></li>
+        
+          <li><a href="../Hpricot/Builder.html">Hpricot::Builder</a></li>
+        
+          <li><a href="../Hpricot/CData/Trav.html">Hpricot::CData::Trav</a></li>
+        
+          <li><a href="../Hpricot/Comment/Trav.html">Hpricot::Comment::Trav</a></li>
+        
+          <li><a href="../Hpricot/Container.html">Hpricot::Container</a></li>
+        
+          <li><a href="../Hpricot/Container/Trav.html">Hpricot::Container::Trav</a></li>
+        
+          <li><a href="../Hpricot/Context.html">Hpricot::Context</a></li>
+        
+          <li><a href="../Hpricot/CssProxy.html">Hpricot::CssProxy</a></li>
+        
+          <li><a href="../Hpricot/Doc/Trav.html">Hpricot::Doc::Trav</a></li>
+        
+          <li><a href="../Hpricot/DocType/Trav.html">Hpricot::DocType::Trav</a></li>
+        
+          <li><a href="../Hpricot/Elem/Trav.html">Hpricot::Elem::Trav</a></li>
+        
+          <li><a href="../Hpricot/EncodingError.html">Hpricot::EncodingError</a></li>
+        
+          <li><a href="../Hpricot/Error.html">Hpricot::Error</a></li>
+        
+          <li><a href="../Hpricot/Leaf.html">Hpricot::Leaf</a></li>
+        
+          <li><a href="../Hpricot/Leaf/Trav.html">Hpricot::Leaf::Trav</a></li>
+        
+          <li><a href="../Hpricot/Name.html">Hpricot::Name</a></li>
+        
+          <li><a href="../Hpricot/Node.html">Hpricot::Node</a></li>
+        
+          <li><a href="../Hpricot/ProcIns/Trav.html">Hpricot::ProcIns::Trav</a></li>
+        
+          <li><a href="../Hpricot/Text/Trav.html">Hpricot::Text::Trav</a></li>
+        
+          <li><a href="../Hpricot/Traverse.html">Hpricot::Traverse</a></li>
+        
+          <li><a href="../Hpricot/XHTMLStrict.html">Hpricot::XHTMLStrict</a></li>
+        
+          <li><a href="../Hpricot/XHTMLTransitional.html">Hpricot::XHTMLTransitional</a></li>
+        
+          <li><a href="../Hpricot/XMLDecl/Trav.html">Hpricot::XMLDecl::Trav</a></li>
+        
+          <li><a href="../Kernel.html">Kernel</a></li>
+        
+          <li><a href="../Object.html">Object</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">Hpricot::Traverse</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="filter-method" class="method-detail ">
+          <a name="method-c-filter"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">filter</span><span
+              class="method-args">(tok, &blk)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="filter-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/elements.rb, line 375</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">filter</span>(<span class="ruby-identifier">tok</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">define_method</span>(<span class="ruby-node">&quot;filter[#{tok.is_a?(String) ? tok : tok.inspect}]&quot;</span>, &amp;<span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- filter-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- filter-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="25-method" class="method-detail method-alias">
+          <a name="method-i-25"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">%</span><span
+              class="method-args">(expr)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Traverse.html#method-i-at">at</a>
+          </div>
+          
+        </div><!-- 25-method -->
+
+      
+        <div id="2F-method" class="method-detail method-alias">
+          <a name="method-i-2F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">/</span><span
+              class="method-args">(expr, &blk)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Traverse.html#method-i-search">search</a>
+          </div>
+          
+        </div><!-- 2F-method -->
+
+      
+        <div id="after-method" class="method-detail ">
+          <a name="method-i-after"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">after</span><span
+              class="method-args">(html = nil, &blk)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Adds elements immediately after this element, contained in the
+<tt>html</tt> string.</p>
+            
+
+            
+            <div class="method-source-code" id="after-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">after</span>(<span class="ruby-identifier">html</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">insert_after</span>(<span class="ruby-identifier">make</span>(<span class="ruby-identifier">html</span>, &amp;<span class="ruby-identifier">blk</span>), <span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- after-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- after-method -->
+
+      
+        <div id="at-method" class="method-detail ">
+          <a name="method-i-at"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">at</span><span
+              class="method-args">(expr)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Find the first matching node for the CSS or XPath <tt>expr</tt> string.</p>
+            
+
+            
+            <div class="method-source-code" id="at-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 341</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">at</span>(<span class="ruby-identifier">expr</span>)
+  <span class="ruby-identifier">search</span>(<span class="ruby-identifier">expr</span>).<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- at-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Traverse.html#method-i-25">%</a>
+          </div>
+          
+
+          
+        </div><!-- at-method -->
+
+      
+        <div id="before-method" class="method-detail ">
+          <a name="method-i-before"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">before</span><span
+              class="method-args">(html = nil, &blk)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Adds elements immediately before this element, contained in the
+<tt>html</tt> string.</p>
+            
+
+            
+            <div class="method-source-code" id="before-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">before</span>(<span class="ruby-identifier">html</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">insert_before</span>(<span class="ruby-identifier">make</span>(<span class="ruby-identifier">html</span>, &amp;<span class="ruby-identifier">blk</span>), <span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- before-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- before-method -->
+
+      
+        <div id="bogusetag-3F-method" class="method-detail ">
+          <a name="method-i-bogusetag-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bogusetag?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Is this object a stranded end tag?</p>
+            
+
+            
+            <div class="method-source-code" id="bogusetag-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bogusetag?</span>() <span class="ruby-constant">BogusETag</span><span class="ruby-operator">::</span><span class="ruby-constant">Trav</span> <span class="ruby-operator">===</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">end</span></pre>
+            </div><!-- bogusetag-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bogusetag-3F-method -->
+
+      
+        <div id="children_of_type-method" class="method-detail ">
+          <a name="method-i-children_of_type"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">children_of_type</span><span
+              class="method-args">(tag_name)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Find children of a given <tt>tag_name</tt>.</p>
+
+<pre>ele.children_of_type('p')
+  #=&gt; [...array of paragraphs...]</pre>
+            
+
+            
+            <div class="method-source-code" id="children_of_type-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 390</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">children_of_type</span>(<span class="ruby-identifier">tag_name</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:children</span>
+    <span class="ruby-identifier">children</span>.<span class="ruby-identifier">find_all</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">x</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:pathname</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">pathname</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">tag_name</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- children_of_type-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- children_of_type-method -->
+
+      
+        <div id="clean_path-method" class="method-detail ">
+          <a name="method-i-clean_path"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">clean_path</span><span
+              class="method-args">(path)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="clean_path-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 203</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">clean_path</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">path</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/^\s+|\s+$/</span>, <span class="ruby-string">''</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- clean_path-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- clean_path-method -->
+
+      
+        <div id="comment-3F-method" class="method-detail ">
+          <a name="method-i-comment-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">comment?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Is this object a comment?</p>
+            
+
+            
+            <div class="method-source-code" id="comment-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">comment?</span>() <span class="ruby-constant">Comment</span><span class="ruby-operator">::</span><span class="ruby-constant">Trav</span> <span class="ruby-operator">===</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">end</span></pre>
+            </div><!-- comment-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- comment-3F-method -->
+
+      
+        <div id="css_path-method" class="method-detail ">
+          <a name="method-i-css_path"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">css_path</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Builds a unique CSS string for this node, from the root of the document
+containing it.</p>
+            
+
+            
+            <div class="method-source-code" id="css_path-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 226</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">css_path</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">elem?</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">has_attribute?</span> <span class="ruby-string">'id'</span>
+    <span class="ruby-node">&quot;##{get_attribute('id')}&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">sim</span>, <span class="ruby-identifier">i</span>, <span class="ruby-identifier">id</span> = <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>
+    <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">id</span> = <span class="ruby-identifier">sim</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>
+      <span class="ruby-identifier">sim</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">pathname</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">pathname</span>
+    <span class="ruby-keyword">end</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children</span>
+    <span class="ruby-identifier">p</span> = <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">css_path</span>
+    <span class="ruby-identifier">p</span> = <span class="ruby-identifier">p</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot;#{p} &gt; #{self.pathname}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">pathname</span>
+    <span class="ruby-identifier">p</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;:nth(#{id})&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">sim</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">2</span>
+    <span class="ruby-identifier">p</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- css_path-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- css_path-method -->
+
+      
+        <div id="doc-3F-method" class="method-detail ">
+          <a name="method-i-doc-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">doc?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Is this object the enclosing HTML or XML document?</p>
+            
+
+            
+            <div class="method-source-code" id="doc-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">doc?</span>() <span class="ruby-constant">Doc</span><span class="ruby-operator">::</span><span class="ruby-constant">Trav</span> <span class="ruby-operator">===</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">end</span></pre>
+            </div><!-- doc-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- doc-3F-method -->
+
+      
+        <div id="doctype-3F-method" class="method-detail ">
+          <a name="method-i-doctype-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">doctype?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Is this object a doctype tag?</p>
+            
+
+            
+            <div class="method-source-code" id="doctype-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">doctype?</span>() <span class="ruby-constant">DocType</span><span class="ruby-operator">::</span><span class="ruby-constant">Trav</span> <span class="ruby-operator">===</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">end</span></pre>
+            </div><!-- doctype-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- doctype-3F-method -->
+
+      
+        <div id="elem-3F-method" class="method-detail ">
+          <a name="method-i-elem-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">elem?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Is this object an HTML or XML element?</p>
+            
+
+            
+            <div class="method-source-code" id="elem-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">elem?</span>() <span class="ruby-constant">Elem</span><span class="ruby-operator">::</span><span class="ruby-constant">Trav</span> <span class="ruby-operator">===</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">end</span></pre>
+            </div><!-- elem-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- elem-3F-method -->
+
+      
+        <div id="following-method" class="method-detail ">
+          <a name="method-i-following"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">following</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Find all nodes which follow the current one.</p>
+            
+
+            
+            <div class="method-source-code" id="following-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">following</span>
+  <span class="ruby-identifier">sibs</span> = <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children</span>
+  <span class="ruby-identifier">si</span> = <span class="ruby-identifier">sibs</span>.<span class="ruby-identifier">index</span>(<span class="ruby-keyword">self</span>) <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Elements</span>[*<span class="ruby-identifier">sibs</span>[<span class="ruby-identifier">si</span><span class="ruby-operator">...</span><span class="ruby-identifier">sibs</span>.<span class="ruby-identifier">length</span>]]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- following-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- following-method -->
+
+      
+        <div id="get_subnode-method" class="method-detail ">
+          <a name="method-i-get_subnode"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">get_subnode</span><span
+              class="method-args">(*indexes)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="get_subnode-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_subnode</span>(*<span class="ruby-identifier">indexes</span>)
+  <span class="ruby-identifier">n</span> = <span class="ruby-keyword">self</span>
+  <span class="ruby-identifier">indexes</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">n</span> = <span class="ruby-identifier">n</span>.<span class="ruby-identifier">get_subnode_internal</span>(<span class="ruby-identifier">index</span>)
+  }
+  <span class="ruby-identifier">n</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- get_subnode-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- get_subnode-method -->
+
+      
+        <div id="html-method" class="method-detail ">
+          <a name="method-i-html"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">html</span><span
+              class="method-args">(inner = nil, &blk)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Builds an HTML string from the contents of this node.</p>
+            
+
+            
+            <div class="method-source-code" id="html-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">html</span>(<span class="ruby-identifier">inner</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">inner</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">blk</span>
+    <span class="ruby-identifier">altered!</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">inner</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span> = <span class="ruby-identifier">inner</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span> = <span class="ruby-identifier">make</span>(<span class="ruby-identifier">inner</span>, &amp;<span class="ruby-identifier">blk</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">reparent</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:children</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">children</span>
+      <span class="ruby-identifier">children</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">output</span>(<span class="ruby-string">&quot;&quot;</span>) }.<span class="ruby-identifier">join</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- html-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Traverse.html#method-i-inner_html">inner_html</a>
+          </div>
+          
+
+          
+        </div><!-- html-method -->
+
+      
+        <div id="index-method" class="method-detail ">
+          <a name="method-i-index"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">index</span><span
+              class="method-args">(name)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="index-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;*&quot;</span>
+  <span class="ruby-identifier">children</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">if</span> (<span class="ruby-identifier">x</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:name</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">name</span>) <span class="ruby-keyword">or</span>
+      (<span class="ruby-identifier">x</span>.<span class="ruby-identifier">text?</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;text()&quot;</span>)
+    <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">children</span>
+  <span class="ruby-value">-1</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- index-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- index-method -->
+
+      
+        <div id="innerHTML-method" class="method-detail method-alias">
+          <a name="method-i-innerHTML"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">innerHTML</span><span
+              class="method-args">(inner = nil, &blk)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Traverse.html#method-i-inner_html">inner_html</a>
+          </div>
+          
+        </div><!-- innerHTML-method -->
+
+      
+        <div id="innerHTML-3D-method" class="method-detail method-alias">
+          <a name="method-i-innerHTML-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">innerHTML=</span><span
+              class="method-args">(inner)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Traverse.html#method-i-inner_html-3D">inner_html=</a>
+          </div>
+          
+        </div><!-- innerHTML-3D-method -->
+
+      
+        <div id="innerText-method" class="method-detail method-alias">
+          <a name="method-i-innerText"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">innerText</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Traverse.html#method-i-inner_text">inner_text</a>
+          </div>
+          
+        </div><!-- innerText-method -->
+
+      
+        <div id="inner_html-method" class="method-detail method-alias">
+          <a name="method-i-inner_html"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">inner_html</span><span
+              class="method-args">(inner = nil, &blk)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Traverse.html#method-i-innerHTML">innerHTML</a>
+          </div>
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Traverse.html#method-i-html">html</a>
+          </div>
+          
+        </div><!-- inner_html-method -->
+
+      
+        <div id="inner_html-3D-method" class="method-detail ">
+          <a name="method-i-inner_html-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">inner_html=</span><span
+              class="method-args">(inner)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Inserts new contents into the current node, based on the HTML contained in
+string <tt>inner</tt>.</p>
+            
+
+            
+            <div class="method-source-code" id="inner_html-3D-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 191</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inner_html=</span>(<span class="ruby-identifier">inner</span>)
+  <span class="ruby-identifier">html</span>(<span class="ruby-identifier">inner</span> <span class="ruby-operator">||</span> [])
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- inner_html-3D-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Traverse.html#method-i-innerHTML-3D">innerHTML=</a>
+          </div>
+          
+
+          
+        </div><!-- inner_html-3D-method -->
+
+      
+        <div id="inner_text-method" class="method-detail ">
+          <a name="method-i-inner_text"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">inner_text</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Builds a string from the text contained in this node.  All HTML elements
+are removed.</p>
+            
+
+            
+            <div class="method-source-code" id="inner_text-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inner_text</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:children</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">children</span>
+    <span class="ruby-identifier">children</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">inner_text</span> }.<span class="ruby-identifier">join</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- inner_text-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Traverse.html#method-i-innerText">innerText</a>
+          </div>
+          
+
+          
+        </div><!-- inner_text-method -->
+
+      
+        <div id="make-method" class="method-detail ">
+          <a name="method-i-make"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">make</span><span
+              class="method-args">(input = nil, &blk)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Parses an HTML string, making an HTML fragment based on the options used to
+create the container document.</p>
+            
+
+            
+            <div class="method-source-code" id="make-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">make</span>(<span class="ruby-identifier">input</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">parent</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:make</span>
+    <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">make</span>(<span class="ruby-identifier">input</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Hpricot</span>.<span class="ruby-identifier">make</span>(<span class="ruby-identifier">input</span>, &amp;<span class="ruby-identifier">blk</span>).<span class="ruby-identifier">children</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- make-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- make-method -->
+
+      
+        <div id="next-method" class="method-detail ">
+          <a name="method-i-next"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">next</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the node neighboring this node to the south: just below it. This
+method includes text nodes and comments and such.</p>
+            
+
+            
+            <div class="method-source-code" id="next-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">next</span>
+  <span class="ruby-identifier">sib</span> = <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children</span>
+  <span class="ruby-identifier">sib</span>[<span class="ruby-identifier">sib</span>.<span class="ruby-identifier">index</span>(<span class="ruby-keyword">self</span>) <span class="ruby-operator">+</span> <span class="ruby-value">1</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">parent</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- next-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Traverse.html#method-i-next_node">next_node</a>
+          </div>
+          
+
+          
+        </div><!-- next-method -->
+
+      
+        <div id="next_node-method" class="method-detail method-alias">
+          <a name="method-i-next_node"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">next_node</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Traverse.html#method-i-next">next</a>
+          </div>
+          
+        </div><!-- next_node-method -->
+
+      
+        <div id="node_position-method" class="method-detail ">
+          <a name="method-i-node_position"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">node_position</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="node_position-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 242</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">node_position</span>
+  <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">index</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- node_position-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- node_position-method -->
+
+      
+        <div id="nodes_at-method" class="method-detail ">
+          <a name="method-i-nodes_at"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">nodes_at</span><span
+              class="method-args">(*pos)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Puts together an array of neighboring nodes based on their proximity to
+this node.  So, for example, to get the next node, you could use
+<tt>nodes_at(1).  Or, to get the previous node, use
+&lt;tt&gt;nodes_at(1)</tt>.</p>
+
+<p>This method also accepts ranges and sets of numbers.</p>
+
+<pre>ele.nodes_at(-3..-1, 1..3) # gets three nodes before and three after
+ele.nodes_at(1, 5, 7) # gets three nodes at offsets below the current node
+ele.nodes_at(0, 5..6) # the current node and two others</pre>
+            
+
+            
+            <div class="method-source-code" id="nodes_at-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">nodes_at</span>(*<span class="ruby-identifier">pos</span>)
+  <span class="ruby-identifier">sib</span> = <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children</span>
+  <span class="ruby-identifier">i</span>, <span class="ruby-identifier">si</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">sib</span>.<span class="ruby-identifier">index</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-identifier">pos</span>.<span class="ruby-identifier">map!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Range</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">begin</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+      <span class="ruby-identifier">r</span> = <span class="ruby-constant">Range</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">r</span>.<span class="ruby-identifier">begin</span>)<span class="ruby-operator">-</span><span class="ruby-identifier">si</span>, <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">r</span>.<span class="ruby-identifier">end</span>)<span class="ruby-operator">-</span><span class="ruby-identifier">si</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">exclude_end?</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">r</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">pos</span>
+  <span class="ruby-constant">Elements</span>[*
+    <span class="ruby-identifier">sib</span>.<span class="ruby-identifier">select</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">sel</span> =
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">si</span> <span class="ruby-keyword">when</span> *<span class="ruby-identifier">pos</span>
+          <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">sel</span>
+    <span class="ruby-keyword">end</span>
+  ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- nodes_at-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- nodes_at-method -->
+
+      
+        <div id="position-method" class="method-detail ">
+          <a name="method-i-position"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">position</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="position-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 246</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">position</span>
+  <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children_of_type</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">pathname</span>).<span class="ruby-identifier">index</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- position-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- position-method -->
+
+      
+        <div id="preceding-method" class="method-detail ">
+          <a name="method-i-preceding"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">preceding</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Find all preceding nodes.</p>
+            
+
+            
+            <div class="method-source-code" id="preceding-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">preceding</span>
+  <span class="ruby-identifier">sibs</span> = <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children</span>
+  <span class="ruby-identifier">si</span> = <span class="ruby-identifier">sibs</span>.<span class="ruby-identifier">index</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Elements</span>[*<span class="ruby-identifier">sibs</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">si</span>]]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- preceding-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- preceding-method -->
+
+      
+        <div id="previous-method" class="method-detail ">
+          <a name="method-i-previous"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">previous</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns to node neighboring this node to the north: just above it. This
+method includes text nodes and comments and such.</p>
+            
+
+            
+            <div class="method-source-code" id="previous-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">previous</span>
+  <span class="ruby-identifier">sib</span> = <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children</span>
+  <span class="ruby-identifier">x</span> = <span class="ruby-identifier">sib</span>.<span class="ruby-identifier">index</span>(<span class="ruby-keyword">self</span>) <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">sib</span>[<span class="ruby-identifier">x</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">sib</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- previous-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Traverse.html#method-i-previous_node">previous_node</a>
+          </div>
+          
+
+          
+        </div><!-- previous-method -->
+
+      
+        <div id="previous_node-method" class="method-detail method-alias">
+          <a name="method-i-previous_node"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">previous_node</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Traverse.html#method-i-previous">previous</a>
+          </div>
+          
+        </div><!-- previous_node-method -->
+
+      
+        <div id="procins-3F-method" class="method-detail ">
+          <a name="method-i-procins-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">procins?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Is this object an XML processing instruction?</p>
+            
+
+            
+            <div class="method-source-code" id="procins-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">procins?</span>() <span class="ruby-constant">ProcIns</span><span class="ruby-operator">::</span><span class="ruby-constant">Trav</span> <span class="ruby-operator">===</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">end</span></pre>
+            </div><!-- procins-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- procins-3F-method -->
+
+      
+        <div id="search-method" class="method-detail ">
+          <a name="method-i-search"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">search</span><span
+              class="method-args">(expr, &blk)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Searches this node for all elements matching the CSS or XPath
+<tt>expr</tt>.  Returns an Elements array containing the matching nodes. 
+If <tt>blk</tt> is given, it is used to iterate through the matching set.</p>
+            
+
+            
+            <div class="method-source-code" id="search-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 254</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">search</span>(<span class="ruby-identifier">expr</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">Range</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">expr</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Elements</span>.<span class="ruby-identifier">expand</span>(<span class="ruby-identifier">at</span>(<span class="ruby-identifier">expr</span>.<span class="ruby-identifier">begin</span>), <span class="ruby-identifier">at</span>(<span class="ruby-identifier">expr</span>.<span class="ruby-identifier">end</span>), <span class="ruby-identifier">expr</span>.<span class="ruby-identifier">exclude_end?</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">last</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">nodes</span> = [<span class="ruby-keyword">self</span>]
+  <span class="ruby-identifier">done</span> = []
+  <span class="ruby-identifier">expr</span> = <span class="ruby-identifier">expr</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">hist</span> = []
+  <span class="ruby-keyword">until</span> <span class="ruby-identifier">expr</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">expr</span> = <span class="ruby-identifier">clean_path</span>(<span class="ruby-identifier">expr</span>)
+      <span class="ruby-identifier">expr</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">%^//!</span>, <span class="ruby-string">''</span>)
+
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">expr</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">%^/?\.\.!</span>
+          <span class="ruby-identifier">last</span> = <span class="ruby-identifier">expr</span> = <span class="ruby-node">$'</span>
+          <span class="ruby-identifier">nodes</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">parent</span> }
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">%^[&gt;/]\s*!</span>
+          <span class="ruby-identifier">last</span> = <span class="ruby-identifier">expr</span> = <span class="ruby-node">$'</span>
+          <span class="ruby-identifier">nodes</span> = <span class="ruby-constant">Elements</span>[*<span class="ruby-identifier">nodes</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:children</span> }.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>]
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">%^\+!</span>
+          <span class="ruby-identifier">last</span> = <span class="ruby-identifier">expr</span> = <span class="ruby-node">$'</span>
+          <span class="ruby-identifier">nodes</span>.<span class="ruby-identifier">map!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
+              <span class="ruby-identifier">siblings</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children</span>
+              <span class="ruby-identifier">siblings</span>[<span class="ruby-identifier">siblings</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">node</span>)<span class="ruby-operator">+</span><span class="ruby-value">1</span>]
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-identifier">nodes</span>.<span class="ruby-identifier">compact!</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">%^~!</span>
+          <span class="ruby-identifier">last</span> = <span class="ruby-identifier">expr</span> = <span class="ruby-node">$'</span>
+          <span class="ruby-identifier">nodes</span>.<span class="ruby-identifier">map!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
+              <span class="ruby-identifier">siblings</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children</span>
+              <span class="ruby-identifier">siblings</span>[(<span class="ruby-identifier">siblings</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">node</span>)<span class="ruby-operator">+</span><span class="ruby-value">1</span>)<span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-identifier">nodes</span>.<span class="ruby-identifier">flatten!</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">%^[|,]!</span>
+          <span class="ruby-identifier">last</span> = <span class="ruby-identifier">expr</span> = <span class="ruby-node">&quot; #$'&quot;</span>
+          <span class="ruby-identifier">nodes</span>.<span class="ruby-identifier">shift</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">nodes</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>
+          <span class="ruby-identifier">done</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">nodes</span>
+          <span class="ruby-identifier">nodes</span> = [<span class="ruby-keyword">self</span>]
+      <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">m</span> = <span class="ruby-identifier">expr</span>.<span class="ruby-identifier">match</span>(<span class="ruby-node">%^([#.]?)([a-z0-9\\*_-]*)!</span>).<span class="ruby-identifier">to_a</span>
+          <span class="ruby-identifier">after</span> = <span class="ruby-node">$'</span>
+          <span class="ruby-identifier">mt</span> = <span class="ruby-identifier">after</span>[<span class="ruby-regexp">%:[a-z0-9\\*_-]+!</span>, <span class="ruby-value">0</span>]
+          <span class="ruby-identifier">oop</span> = <span class="ruby-keyword">false</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">mt</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> (<span class="ruby-identifier">mt</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;:not&quot;</span> <span class="ruby-keyword">or</span> <span class="ruby-constant">Traverse</span>.<span class="ruby-identifier">method_defined?</span> <span class="ruby-node">&quot;filter[#{mt}]&quot;</span>)
+            <span class="ruby-identifier">after</span> = <span class="ruby-node">$'</span>
+            <span class="ruby-identifier">m</span>[<span class="ruby-value">2</span>] <span class="ruby-operator">+=</span> <span class="ruby-identifier">mt</span>
+            <span class="ruby-identifier">expr</span> = <span class="ruby-identifier">after</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'#'</span>
+              <span class="ruby-identifier">oid</span> = <span class="ruby-identifier">get_element_by_id</span>(<span class="ruby-identifier">m</span>[<span class="ruby-value">2</span>])
+              <span class="ruby-identifier">nodes</span> = <span class="ruby-identifier">oid</span> <span class="ruby-operator">?</span> [<span class="ruby-identifier">oid</span>] <span class="ruby-operator">:</span> []
+              <span class="ruby-identifier">expr</span> = <span class="ruby-identifier">after</span>
+          <span class="ruby-keyword">else</span>
+              <span class="ruby-identifier">m</span>[<span class="ruby-value">2</span>] = <span class="ruby-string">&quot;*&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">after</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^\(\)/</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">m</span>[<span class="ruby-value">2</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">m</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;.&quot;</span>
+              <span class="ruby-identifier">ret</span> = []
+              <span class="ruby-identifier">nodes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
+                  <span class="ruby-keyword">case</span> <span class="ruby-identifier">m</span>[<span class="ruby-value">2</span>]
+                  <span class="ruby-keyword">when</span> <span class="ruby-string">'*'</span>
+                      <span class="ruby-identifier">node</span>.<span class="ruby-identifier">traverse_element</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">ret</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">n</span> }
+                  <span class="ruby-keyword">else</span>
+                      <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:get_elements_by_tag_name</span>
+                        <span class="ruby-identifier">ret</span> <span class="ruby-operator">+=</span> [*<span class="ruby-identifier">node</span>.<span class="ruby-identifier">get_elements_by_tag_name</span>(<span class="ruby-identifier">m</span>[<span class="ruby-value">2</span>])] <span class="ruby-operator">-</span> [*(<span class="ruby-identifier">node</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">last</span>)]
+                      <span class="ruby-keyword">end</span>
+                  <span class="ruby-keyword">end</span>
+              <span class="ruby-keyword">end</span>
+              <span class="ruby-identifier">nodes</span> = <span class="ruby-identifier">ret</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-identifier">last</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">hist</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">expr</span>
+      <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">hist</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">hist</span>[<span class="ruby-value">-2</span>]
+      <span class="ruby-identifier">nodes</span>, <span class="ruby-identifier">expr</span> = <span class="ruby-constant">Elements</span>.<span class="ruby-identifier">filter</span>(<span class="ruby-identifier">nodes</span>, <span class="ruby-identifier">expr</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">nodes</span> = <span class="ruby-identifier">done</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">nodes</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">uniq</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">blk</span>
+      <span class="ruby-identifier">nodes</span>.<span class="ruby-identifier">each</span>(&amp;<span class="ruby-identifier">blk</span>)
+      <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">else</span>
+      <span class="ruby-constant">Elements</span>[*<span class="ruby-identifier">nodes</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- search-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Traverse.html#method-i-2F">/</a>
+          </div>
+          
+
+          
+        </div><!-- search-method -->
+
+      
+        <div id="swap-method" class="method-detail ">
+          <a name="method-i-swap"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">swap</span><span
+              class="method-args">(html = nil, &blk)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Replace this element and its contents with the nodes contained in the
+<tt>html</tt> string.</p>
+            
+
+            
+            <div class="method-source-code" id="swap-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">swap</span>(<span class="ruby-identifier">html</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">altered!</span>
+  <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">replace_child</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">make</span>(<span class="ruby-identifier">html</span>, &amp;<span class="ruby-identifier">blk</span>))
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- swap-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- swap-method -->
+
+      
+        <div id="text-3F-method" class="method-detail ">
+          <a name="method-i-text-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">text?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Is this object an HTML text node?</p>
+            
+
+            
+            <div class="method-source-code" id="text-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">text?</span>() <span class="ruby-constant">Text</span><span class="ruby-operator">::</span><span class="ruby-constant">Trav</span> <span class="ruby-operator">===</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">end</span></pre>
+            </div><!-- text-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- text-3F-method -->
+
+      
+        <div id="to_html-method" class="method-detail ">
+          <a name="method-i-to_html"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_html</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Builds an HTML string from this node and its contents. If you need to write
+to a stream, try calling <tt>output(io)</tt> as a method on this object.</p>
+            
+
+            
+            <div class="method-source-code" id="to_html-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_html</span>
+  <span class="ruby-identifier">output</span>(<span class="ruby-string">&quot;&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- to_html-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Traverse.html#method-i-to_s">to_s</a>
+          </div>
+          
+
+          
+        </div><!-- to_html-method -->
+
+      
+        <div id="to_original_html-method" class="method-detail ">
+          <a name="method-i-to_original_html"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_original_html</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Attempts to preserve the original HTML of the document, only outputing new
+tags for elements which have changed.</p>
+            
+
+            
+            <div class="method-source-code" id="to_original_html-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_original_html</span>
+  <span class="ruby-identifier">output</span>(<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-value">:preserve</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- to_original_html-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_original_html-method -->
+
+      
+        <div id="to_plain_text-method" class="method-detail ">
+          <a name="method-i-to_plain_text"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_plain_text</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Builds a string from the text contained in this node.  All HTML elements
+are removed.</p>
+            
+
+            
+            <div class="method-source-code" id="to_plain_text-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_plain_text</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:children</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">children</span>
+    <span class="ruby-identifier">children</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_plain_text</span> }.<span class="ruby-identifier">join</span>.<span class="ruby-identifier">strip</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\n{2,}/</span>, <span class="ruby-string">&quot;\n\n&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- to_plain_text-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_plain_text-method -->
+
+      
+        <div id="to_s-method" class="method-detail method-alias">
+          <a name="method-i-to_s"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_s</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Traverse.html#method-i-to_html">to_html</a>
+          </div>
+          
+        </div><!-- to_s-method -->
+
+      
+        <div id="traverse_element-method" class="method-detail ">
+          <a name="method-i-traverse_element"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">traverse_element</span><span
+              class="method-args">(*names)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><tt>traverse_element</tt> traverses elements in the tree. It yields
+elements in depth first order.</p>
+
+<p>If <em>names</em> are empty, it yields all elements. If non-empty
+<em>names</em> are given, it should be list of universal names.</p>
+
+<p>A nested element is yielded in depth first order as follows.</p>
+
+<pre>t = Hpricot('&lt;a id=0&gt;&lt;b&gt;&lt;a id=1 /&gt;&lt;/b&gt;&lt;c id=2 /&gt;&lt;/a&gt;')
+t.traverse_element(&quot;a&quot;, &quot;c&quot;) {|e| p e}
+# =&gt;
+{elem &lt;a id=&quot;0&quot;&gt; {elem &lt;b&gt; {emptyelem &lt;a id=&quot;1&quot;&gt;} &lt;/b&gt;} {emptyelem &lt;c id=&quot;2&quot;&gt;} &lt;/a&gt;}
+{emptyelem &lt;a id=&quot;1&quot;&gt;}
+{emptyelem &lt;c id=&quot;2&quot;&gt;}</pre>
+
+<p>Universal names are specified as follows.</p>
+
+<pre>t = Hpricot(&lt;&lt;'End')
+&lt;html&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index,nofollow&quot;&gt;
+&lt;meta name=&quot;author&quot; content=&quot;Who am I?&quot;&gt;
+&lt;/html&gt;
+End
+t.traverse_element(&quot;{http://www.w3.org/1999/xhtml}meta&quot;) {|e| p e}
+# =&gt;
+{emptyelem &lt;{http://www.w3.org/1999/xhtml}meta name=&quot;robots&quot; content=&quot;index,nofollow&quot;&gt;}
+{emptyelem &lt;{http://www.w3.org/1999/xhtml}meta name=&quot;author&quot; content=&quot;Who am I?&quot;&gt;}</pre>
+            
+
+            
+            <div class="method-source-code" id="traverse_element-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 374</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">traverse_element</span>(*<span class="ruby-identifier">names</span>, &amp;<span class="ruby-identifier">block</span>) <span class="ruby-comment"># :yields: element</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">names</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">traverse_all_element</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">name_set</span> = {}
+    <span class="ruby-identifier">names</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">name_set</span>[<span class="ruby-identifier">n</span>] = <span class="ruby-keyword">true</span> }
+    <span class="ruby-identifier">traverse_some_element</span>(<span class="ruby-identifier">name_set</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- traverse_element-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- traverse_element-method -->
+
+      
+        <div id="traverse_text-method" class="method-detail ">
+          <a name="method-i-traverse_text"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">traverse_text</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><tt>traverse_text</tt> traverses texts in the tree</p>
+            
+
+            
+            <div class="method-source-code" id="traverse_text-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 680</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">traverse_text</span>(&amp;<span class="ruby-identifier">block</span>) <span class="ruby-comment"># :yields: text</span>
+  <span class="ruby-identifier">traverse_text_internal</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- traverse_text-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- traverse_text-method -->
+
+      
+        <div id="xmldecl-3F-method" class="method-detail ">
+          <a name="method-i-xmldecl-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">xmldecl?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Is this object an XML declaration?</p>
+            
+
+            
+            <div class="method-source-code" id="xmldecl-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">xmldecl?</span>() <span class="ruby-constant">XMLDecl</span><span class="ruby-operator">::</span><span class="ruby-constant">Trav</span> <span class="ruby-operator">===</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">end</span></pre>
+            </div><!-- xmldecl-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- xmldecl-3F-method -->
+
+      
+        <div id="xpath-method" class="method-detail ">
+          <a name="method-i-xpath"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">xpath</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Builds a unique XPath string for this node, from the root of the document
+containing it.</p>
+            
+
+            
+            <div class="method-source-code" id="xpath-source">
+<pre>
+<span class="ruby-comment"># File lib/hpricot/traverse.rb, line 209</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">xpath</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">elem?</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">has_attribute?</span> <span class="ruby-string">'id'</span>
+    <span class="ruby-node">&quot;//#{self.name}[@id='#{get_attribute('id')}']&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">sim</span>, <span class="ruby-identifier">id</span> = <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>
+    <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">id</span> = <span class="ruby-identifier">sim</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>
+      <span class="ruby-identifier">sim</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">pathname</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">pathname</span>
+    <span class="ruby-keyword">end</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children</span>
+    <span class="ruby-identifier">p</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">xpath</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">pathname</span>)
+    <span class="ruby-identifier">p</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;[#{id+1}]&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">sim</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">2</span>
+    <span class="ruby-identifier">p</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- xpath-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- xpath-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

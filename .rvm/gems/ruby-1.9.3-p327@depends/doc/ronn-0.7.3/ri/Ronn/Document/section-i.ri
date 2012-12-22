@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"section:EFI"Ronn::Document#section;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I";The man page's section: a string whose first character;TI">is numeric; displayed in parenthesis along with the name.;T:
+@file0FI"lib/ronn/document.rb;T
