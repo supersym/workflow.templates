@@ -17486,3 +17486,96 @@ za 2012-12-22 14:37:20 +0100
 NotBranchError: Not a branch: "/data/solo/ops/workflow/templates/Sublime.FileTemplates/".
 
 0.091  return code 3
+
+za 2012-12-22 14:40:56 +0100
+0.068  bazaar version: 2.5.1
+0.068  bzr arguments: [u'nick']
+0.077  looking for plugins in /data/solo/ace/users/s/supersym/.bazaar/plugins
+0.077  looking for plugins in /usr/lib/python2.7/site-packages/bzrlib/plugins
+0.086  encoding stdout as sys.stdin encoding 'UTF-8'
+0.090  Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/bzrlib/commands.py", line 920, in exception_to_return_code
+    return the_callable(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/bzrlib/commands.py", line 1131, in run_bzr
+    ret = run(*run_argv)
+  File "/usr/lib/python2.7/site-packages/bzrlib/commands.py", line 673, in run_argv_aliases
+    return self.run(**all_cmd_args)
+  File "/usr/lib/python2.7/site-packages/bzrlib/commands.py", line 695, in run
+    return self._operation.run_simple(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/bzrlib/cleanup.py", line 136, in run_simple
+    self.cleanups, self.func, *args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/bzrlib/cleanup.py", line 166, in _do_with_cleanups
+    result = func(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/bzrlib/builtins.py", line 3905, in run
+    branch = Branch.open_containing(directory)[0]
+  File "/usr/lib/python2.7/site-packages/bzrlib/branch.py", line 210, in open_containing
+    possible_transports)
+  File "/usr/lib/python2.7/site-packages/bzrlib/controldir.py", line 732, in open_containing
+    return klass.open_containing_from_transport(transport)
+  File "/usr/lib/python2.7/site-packages/bzrlib/controldir.py", line 766, in open_containing_from_transport
+    raise errors.NotBranchError(path=url)
+NotBranchError: Not a branch: "/data/solo/ops/workflow/templates/Sublime.FileTemplates/".
+
+0.090  return code 3
+
+za 2012-12-22 14:41:09 +0100
+0.069  bazaar version: 2.5.1
+0.069  bzr arguments: [u'nick']
+0.078  looking for plugins in /data/solo/ace/users/s/supersym/.bazaar/plugins
+0.078  looking for plugins in /usr/lib/python2.7/site-packages/bzrlib/plugins
+0.087  encoding stdout as sys.stdin encoding 'UTF-8'
+0.091  Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/bzrlib/commands.py", line 920, in exception_to_return_code
+    return the_callable(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/bzrlib/commands.py", line 1131, in run_bzr
+    ret = run(*run_argv)
+  File "/usr/lib/python2.7/site-packages/bzrlib/commands.py", line 673, in run_argv_aliases
+    return self.run(**all_cmd_args)
+  File "/usr/lib/python2.7/site-packages/bzrlib/commands.py", line 695, in run
+    return self._operation.run_simple(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/bzrlib/cleanup.py", line 136, in run_simple
+    self.cleanups, self.func, *args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/bzrlib/cleanup.py", line 166, in _do_with_cleanups
+    result = func(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/bzrlib/builtins.py", line 3905, in run
+    branch = Branch.open_containing(directory)[0]
+  File "/usr/lib/python2.7/site-packages/bzrlib/branch.py", line 210, in open_containing
+    possible_transports)
+  File "/usr/lib/python2.7/site-packages/bzrlib/controldir.py", line 732, in open_containing
+    return klass.open_containing_from_transport(transport)
+  File "/usr/lib/python2.7/site-packages/bzrlib/controldir.py", line 766, in open_containing_from_transport
+    raise errors.NotBranchError(path=url)
+NotBranchError: Not a branch: "/data/solo/ops/workflow/templates/Sublime.FileTemplates/".
+
+0.091  return code 3
+
+za 2012-12-22 14:41:17 +0100
+0.068  bazaar version: 2.5.1
+0.068  bzr arguments: [u'nick']
+0.078  looking for plugins in /data/solo/ace/users/s/supersym/.bazaar/plugins
+0.078  looking for plugins in /usr/lib/python2.7/site-packages/bzrlib/plugins
+0.086  encoding stdout as sys.stdin encoding 'UTF-8'
+0.091  Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/bzrlib/commands.py", line 920, in exception_to_return_code
+    return the_callable(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/bzrlib/commands.py", line 1131, in run_bzr
+    ret = run(*run_argv)
+  File "/usr/lib/python2.7/site-packages/bzrlib/commands.py", line 673, in run_argv_aliases
+    return self.run(**all_cmd_args)
+  File "/usr/lib/python2.7/site-packages/bzrlib/commands.py", line 695, in run
+    return self._operation.run_simple(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/bzrlib/cleanup.py", line 136, in run_simple
+    self.cleanups, self.func, *args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/bzrlib/cleanup.py", line 166, in _do_with_cleanups
+    result = func(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/bzrlib/builtins.py", line 3905, in run
+    branch = Branch.open_containing(directory)[0]
+  File "/usr/lib/python2.7/site-packages/bzrlib/branch.py", line 210, in open_containing
+    possible_transports)
+  File "/usr/lib/python2.7/site-packages/bzrlib/controldir.py", line 732, in open_containing
+    return klass.open_containing_from_transport(transport)
+  File "/usr/lib/python2.7/site-packages/bzrlib/controldir.py", line 766, in open_containing_from_transport
+    raise errors.NotBranchError(path=url)
+NotBranchError: Not a branch: "/data/solo/ops/workflow/templates/Sublime.FileTemplates/".
+
+0.091  return code 3
